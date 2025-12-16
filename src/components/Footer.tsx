@@ -1,0 +1,104 @@
+import Link from "next/link";
+import Image from "next/image";
+import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+
+export default function Footer() {
+    return (
+        <footer className="bg-muted/30 border-t pt-16 pb-8">
+            <div className="container mx-auto px-4">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                    {/* Brand Info */}
+                    <div className="space-y-4">
+                        <Link href="/" className="flex items-center gap-2">
+                            <div className="relative h-10 w-10">
+                                <Image
+                                    src="/images/logo.png"
+                                    alt="Nandini Agro Logo"
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
+                            <span className="text-xl font-bold text-primary">Nandini Agro</span>
+                        </Link>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                            Manufacturers of high-quality animal feed in Nepal. Dedicated to supporting farmers with nutritious feed for cattle, goats, and pigs.
+                        </p>
+                    </div>
+
+                    {/* Quick Links */}
+                    <div>
+                        <h3 className="font-semibold mb-4 text-foreground">Quick Links</h3>
+                        <ul className="space-y-2 text-sm text-muted-foreground">
+                            <li>
+                                <Link href="/" className="hover:text-primary transition-colors">
+                                    Home
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/products" className="hover:text-primary transition-colors">
+                                    Our Products
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/contact" className="hover:text-primary transition-colors">
+                                    Contact Us
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="#" className="hover:text-primary transition-colors">
+                                    Privacy Policy
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Contact Info */}
+                    <div>
+                        <h3 className="font-semibold mb-4 text-foreground">Contact Us</h3>
+                        <ul className="space-y-3 text-sm text-muted-foreground">
+                            <li className="flex items-start gap-3">
+                                <MapPin className="h-5 w-5 text-primary shrink-0" />
+                                <span>Omsatiya-2, Rupandehi, Nepal</span>
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <Phone className="h-5 w-5 text-primary shrink-0" />
+                                <span>+977-9800000000</span>
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <Mail className="h-5 w-5 text-primary shrink-0" />
+                                <span>info@nandiniagro.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Socials */}
+                    <div>
+                        <h3 className="font-semibold mb-4 text-foreground">Follow Us</h3>
+                        <div className="flex gap-4">
+                            <a
+                                href="https://www.facebook.com/vanjuladaana"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-primary/10 p-2 rounded-full text-primary hover:bg-primary hover:text-white transition-all"
+                            >
+                                <Facebook className="h-5 w-5" />
+                                <span className="sr-only">Facebook</span>
+                            </a>
+                            <a
+                                href="#"
+                                className="bg-primary/10 p-2 rounded-full text-primary hover:bg-primary hover:text-white transition-all"
+                            >
+                                <Instagram className="h-5 w-5" />
+                                <span className="sr-only">Instagram</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="border-t pt-8 text-center text-sm text-muted-foreground">
+                    <p>&copy; {new Date().getFullYear()} Nandini Agro Industries Pvt. Ltd. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    );
+}

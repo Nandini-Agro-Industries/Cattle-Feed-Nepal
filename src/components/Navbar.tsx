@@ -1,0 +1,120 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import { Menu, Phone, Mail, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
+
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "Products", href: "/products" },
+  { name: "Contact", href: "/contact" },
+];
+
+export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
+        isScrolled
+          ? "bg-background/80 backdrop-blur-md border-border shadow-sm py-2"
+          : "bg-transparent border-transparent py-4"
+      )}
+    >
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
+          <div className="relative h-20 w-40 md:h-28 md:w-56">
+            <Image
+              src="/images/logo.png"
+              alt="Nandini Agro Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </Link>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-sm font-medium hover:text-primary transition-colors relative group"
+            >
+              {link.name}
+              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+            </Link>
+          ))}
+          <Button asChild className="rounded-full px-6">
+            <Link href="/contact">Get a Quote</Link>
+          </Button>
+        </nav>
+
+        {/* Mobile Nav */}
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right">
+              <div className="flex flex-col gap-6 mt-8">
+                <Link href="/" className="flex items-center gap-2 mb-4">
+                  <div className="relative h-24 w-48">
+                    <Image
+                      src="/images/logo.png"
+                      alt="Nandini Agro Logo"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </Link>
+                <nav className="flex flex-col gap-4">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className="text-lg font-medium hover:text-primary transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </nav>
+                <div className="mt-auto border-t pt-6 flex flex-col gap-4 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <Phone className="h-4 w-4" />
+                    <span>+977-9800000000</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Mail className="h-4 w-4" />
+                    <span>info@nandiniagro.com</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPin className="h-4 w-4" />
+                    <span>Omsatiya-2, Rupandehi, Nepal</span>
+                  </div>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
+    </header>
+  );
+}
