@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nandiniagro.com"),
   title: {
     default: "Nandini Agro Industries | Premium Animal Feed in Nepal",
     template: "%s | Nandini Agro Industries"

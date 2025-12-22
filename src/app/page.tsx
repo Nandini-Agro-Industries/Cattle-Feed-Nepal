@@ -80,7 +80,7 @@ export default function Home() {
       <Hero />
 
       {/* About Section */}
-      <section className="py-24 bg-gradient-to-b from-background to-muted/30">
+      <section className="py-12 md:py-24 bg-gradient-to-b from-background to-muted/30">
         <div className="container mx-auto px-4">
           <FadeIn>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -119,7 +119,7 @@ export default function Home() {
       </section>
 
       {/* Products Section */}
-      <section className="py-24 bg-background">
+      <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <FadeIn>
             <SectionHeading
@@ -145,7 +145,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-primary/5 relative overflow-hidden">
+      <section className="py-12 md:py-24 bg-primary/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
         <div className="container mx-auto px-4 relative">
           <FadeIn>
@@ -169,7 +169,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
+      <section className="py-12 md:py-24 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 to-transparent opacity-50" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <FadeIn>
@@ -183,6 +183,35 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Nandini Agro Industries Pvt. Ltd.",
+            "url": "https://nandiniagro.com",
+            "logo": "https://nandiniagro.com/images/logo.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+977-9800000000",
+              "contactType": "customer service",
+              "areaServed": "NP",
+              "availableLanguage": "English"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Omsatiya-2",
+              "addressLocality": "Rupandehi",
+              "addressCountry": "NP"
+            },
+            "sameAs": [
+              "https://www.facebook.com/vanjuladaana"
+            ]
+          })
+        }}
+      />
     </div>
   );
 }

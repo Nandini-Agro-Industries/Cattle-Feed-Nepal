@@ -1,16 +1,44 @@
-
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { products } from "@/data/products";
+import { Metadata } from "next";
 
 // This function generates the static paths for all products at build time
 export function generateStaticParams() {
     return products.map((product) => ({
         id: product.id,
     }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+    const { id } = await params;
+    const product = products.find((p) => p.id === id);
+
+    if (!product) {
+        return {
+            title: "Product Not Found",
+        };
+    }
+
+    return {
+        title: `${product.name} | Nandini Agro Industries`,
+        description: product.description,
+        openGraph: {
+            title: `${product.name} | Nandini Agro Industries`,
+            description: product.description,
+            images: [
+                {
+                    url: product.image,
+                    width: 800,
+                    height: 800,
+                    alt: product.name,
+                },
+            ],
+        },
+    };
 }
 
 export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
@@ -96,6 +124,34 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                     </div>
                 </div>
             </div>
-        </div>
+
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Product",
+                        "name": product.name,
+                        "image": `https://nandiniagro.com${product.image}`,
+                        "description": product.description,
+                        "brand": {
+                            "@type": "Brand",
+                            "name": product.brand
+                        },
+                        "offers": {
+                            "@type": "Offer",
+                            "url": `https://nandiniagro.com/products/${product.id}`,
+                            "priceCurrency": "NPR",
+                            "price": "0", // Price not listed, could use "availability": "https://schema.org/InStock"
+                            "availability": "https://schema.org/InStock",
+                            "seller": {
+                                "@type": "Organization",
+                                "name": "Nandini Agro Industries"
+                            }
+                        }
+                    })
+                }}
+            />
+        </div >
     );
 }

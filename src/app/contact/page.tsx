@@ -2,6 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Contact Us | Nandini Agro Industries",
+    description: "Get in touch with Nandini Agro Industries for orders, dealership inquiries, or support. Call +977-9800000000.",
+};
 
 export default function ContactPage() {
     return (
@@ -16,7 +22,7 @@ export default function ContactPage() {
             </div>
 
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                     {/* Contact Form */}
                     <div className="space-y-8">
                         <div>

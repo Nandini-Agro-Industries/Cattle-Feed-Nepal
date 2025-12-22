@@ -2,6 +2,12 @@ import ProductCard from "@/components/ProductCard";
 import SectionHeading from "@/components/SectionHeading";
 
 import { products } from "@/data/products";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Our Products | Nandini Agro Industries",
+    description: "Browse our complete range of high-quality animal feeds for cattle, goats, and pigs (Vanjula, Siddhartha brands).",
+};
 
 export default function ProductsPage() {
     return (
@@ -16,7 +22,7 @@ export default function ProductsPage() {
             </div>
 
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {products.map((product) => (
                         <ProductCard key={product.id} {...product} />
                     ))}

@@ -27,7 +27,7 @@ export default function Hero() {
                             <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
                             Trusted by Farmers Across Nepal
                         </motion.div>
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
+                        <h1 className="text-4xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
                             Premium Nutrition for <span className="text-primary relative inline-block">
                                 Healthier Livestock
                                 <svg className="absolute w-full h-3 -bottom-1 left-0 text-secondary opacity-50" viewBox="0 0 100 10" preserveAspectRatio="none">
@@ -54,7 +54,7 @@ export default function Hero() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="relative h-[400px] md:h-[600px] w-full flex items-center justify-center mt-8 md:mt-0"
+                        className="relative h-[300px] md:h-[600px] w-full flex items-center justify-center mt-8 md:mt-0"
                     >
                         <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-full blur-3xl opacity-30 animate-pulse" />
 
