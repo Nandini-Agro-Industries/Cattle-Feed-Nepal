@@ -102,11 +102,11 @@ export default function Navbar() {
                 <div className="mt-auto border-t pt-6 flex flex-col gap-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <Phone className="h-4 w-4" />
-                    <span>+977-9800000000</span>
+                    <span>+977-9801412266</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="h-4 w-4" />
-                    <span>info@nandiniagro.com</span>
+                    <span>cattlefeednepal@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin className="h-4 w-4" />

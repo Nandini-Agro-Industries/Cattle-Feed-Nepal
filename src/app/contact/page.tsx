@@ -6,7 +6,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Contact Us | Nandini Agro Industries",
-    description: "Get in touch with Nandini Agro Industries for orders, dealership inquiries, or support. Call +977-9800000000.",
+    description: "Get in touch with Nandini Agro Industries for orders, dealership inquiries, or support. Call +977-9801412266.",
 };
 
 export default function ContactPage() {
@@ -74,7 +74,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-lg">Phone</h3>
-                                        <p className="text-muted-foreground">+977-9800000000</p>
+                                        <p className="text-muted-foreground">+977-9801412266</p>
                                         <p className="text-muted-foreground text-sm">(Available 9 AM - 6 PM)</p>
                                     </div>
                                 </div>
@@ -84,7 +84,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-lg">Email</h3>
-                                        <p className="text-muted-foreground">info@nandiniagro.com</p>
+                                        <p className="text-muted-foreground">cattlefeednepal@gmail.com</p>
                                     </div>
                                 </div>
                             </div>

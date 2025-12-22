@@ -195,7 +195,7 @@ export default function Home() {
             "logo": "https://nandiniagro.com/images/logo.png",
             "contactPoint": {
               "@type": "ContactPoint",
-              "telephone": "+977-9800000000",
+              "telephone": "+977-9801412266",
               "contactType": "customer service",
               "areaServed": "NP",
               "availableLanguage": "English"
