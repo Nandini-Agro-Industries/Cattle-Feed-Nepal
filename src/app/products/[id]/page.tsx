@@ -24,10 +24,10 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     }
 
     return {
-        title: `${product.name} | Nandini Agro Industries`,
+        title: `${product.name} | Nandani Agro Industries Pvt. Ltd.`,
         description: product.description,
         openGraph: {
-            title: `${product.name} | Nandini Agro Industries`,
+            title: `${product.name} | Nandani Agro Industries Pvt. Ltd.`,
             description: product.description,
             images: [
                 {
@@ -132,7 +132,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                         "@context": "https://schema.org",
                         "@type": "Product",
                         "name": product.name,
-                        "image": `https://nandiniagro.com${product.image}`,
+                        "image": `https://www.nandaniagro.com.np${product.image}`,
                         "description": product.description,
                         "brand": {
                             "@type": "Brand",
@@ -140,13 +140,13 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                         },
                         "offers": {
                             "@type": "Offer",
-                            "url": `https://nandiniagro.com/products/${product.id}`,
+                            "url": `https://www.nandaniagro.com.np/products/${product.id}`,
                             "priceCurrency": "NPR",
                             "price": "0", // Price not listed, could use "availability": "https://schema.org/InStock"
                             "availability": "https://schema.org/InStock",
                             "seller": {
                                 "@type": "Organization",
-                                "name": "Nandini Agro Industries"
+                                "name": "Nandani Agro Industries Pvt. Ltd."
                             }
                         }
                     })

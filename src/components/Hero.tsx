@@ -36,7 +36,7 @@ export default function Hero() {
                             </span>
                         </h1>
                         <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
-                            Scientifically formulated feed for cattle, goats, and pigs. Maximize milk production and growth with Nandini Agro's proven nutrition.
+                            Scientifically formulated feed for cattle, goats, and pigs. Maximize milk production and growth with Nandani Agro's proven nutrition.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 pt-2">
                             <Button asChild size="lg" className="text-lg px-8 h-14 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">

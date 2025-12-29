@@ -5,8 +5,8 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Contact Us | Nandini Agro Industries",
-    description: "Get in touch with Nandini Agro Industries for orders, dealership inquiries, or support. Call +977-9801412266.",
+    title: "Contact Us | Nandani Agro Industries Pvt. Ltd.",
+    description: "Get in touch with Nandani Agro Industries Pvt. Ltd. for orders, dealership inquiries, or support. Call +977-9801412266.",
 };
 
 export default function ContactPage() {
@@ -62,10 +62,15 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-lg">Factory Location</h3>
-                                        <p className="text-muted-foreground">
-                                            Nandini Agro Industries Pvt. Ltd.<br />
+                                        <a
+                                            href="https://maps.app.goo.gl/8wJzW9uGCBGcui3B8"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-muted-foreground hover:text-primary transition-colors"
+                                        >
+                                            Nandani Agro Industries Pvt. Ltd.<br />
                                             Omsatiya-2, Rupandehi, Nepal
-                                        </p>
+                                        </a>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -93,13 +98,13 @@ export default function ContactPage() {
                         {/* Map */}
                         <div className="rounded-xl overflow-hidden border h-[300px] bg-muted relative">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.859664509063!2d83.4666!3d27.6915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDQxJzI5LjQiTiA4M8KwMjcnNTkuOCJF!5e0!3m2!1sen!2snp!4v1634567890123!5m2!1sen!2snp"
+                                src="https://maps.google.com/maps?q=Nandani+Agro+Industries+Pvt.+Ltd.+Rupandehi&t=&z=13&ie=UTF8&iwloc=&output=embed"
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0 }}
                                 allowFullScreen
                                 loading="lazy"
-                                title="Nandini Agro Location"
+                                title="Nandani Agro Location"
                             ></iframe>
                         </div>
                     </div>

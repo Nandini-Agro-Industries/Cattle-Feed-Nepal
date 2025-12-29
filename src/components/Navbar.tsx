@@ -37,10 +37,10 @@ export default function Navbar() {
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="relative h-20 w-40 md:h-28 md:w-56">
+          <div className="relative h-20 w-48 md:h-28 md:w-72">
             <Image
-              src="/images/logo.png"
-              alt="Nandini Agro Logo"
+              src="/logo/logo.png"
+              alt="Nandani Agro Industries Pvt. Ltd. Logo"
               fill
               className="object-contain"
             />
@@ -81,8 +81,8 @@ export default function Navbar() {
                 <Link href="/" className="flex items-center gap-2 mb-4">
                   <div className="relative h-24 w-48">
                     <Image
-                      src="/images/logo.png"
-                      alt="Nandini Agro Logo"
+                      src="/logo/logo.png"
+                      alt="Nandani Agro Industries Pvt. Ltd. Logo"
                       fill
                       className="object-contain"
                     />

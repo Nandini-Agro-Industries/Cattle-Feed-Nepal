@@ -15,37 +15,57 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nandiniagro.com"),
+  metadataBase: new URL("https://www.nandaniagro.com.np"),
+  alternates: {
+    canonical: './',
+  },
+  verification: {
+    google: "google-site-verification=YOUR_VERIFICATION_CODE", // Placeholder
+  },
   title: {
-    default: "Nandini Agro Industries | Premium Animal Feed in Nepal",
-    template: "%s | Nandini Agro Industries"
+    default: "Nandani Agro Industries Pvt. Ltd. | Premium Animal Feed in Nepal",
+    template: "%s | Nandani Agro Industries Pvt. Ltd."
   },
   description: "Leading manufacturer of high-quality cattle, goat, and pig feed in Nepal. Brands: Vanjula, Siddhartha. Scientifically formulated for maximum productivity.",
-  keywords: ["Animal Feed", "Cattle Feed", "Goat Feed", "Pig Feed", "Nepal", "Nandini Agro", "Vanjula", "Siddhartha", "Livestock Nutrition"],
-  authors: [{ name: "Nandini Agro Industries" }],
-  creator: "Nandini Agro Industries",
+  keywords: ["Animal Feed", "Cattle Feed", "Goat Feed", "Pig Feed", "Nepal", "Nandani Agro", "Vanjula", "Siddhartha", "Livestock Nutrition"],
+  authors: [{ name: "Nandani Agro Industries Pvt. Ltd." }],
+  creator: "Nandani Agro Industries Pvt. Ltd.",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://nandiniagro.com",
-    title: "Nandini Agro Industries | Premium Animal Feed in Nepal",
+    url: "https://www.nandaniagro.com.np",
+    title: "Nandani Agro Industries Pvt. Ltd. | Premium Animal Feed in Nepal",
     description: "Scientifically formulated feed for healthier livestock and higher yields.",
-    siteName: "Nandini Agro Industries",
+    siteName: "Nandani Agro Industries Pvt. Ltd.",
     images: [
       {
         url: "/images/vanjula-highpro.png", // Using a product image as OG image for now
         width: 1200,
         height: 630,
-        alt: "Nandini Agro Products",
+        alt: "Nandani Agro Industries Products",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nandini Agro Industries",
+    title: "Nandani Agro Industries Pvt. Ltd.",
     description: "Premium Animal Feed Manufacturers in Nepal.",
     images: ["/images/vanjula-highpro.png"],
   },
+  icons: {
+    icon: [
+      { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/favicon/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      { rel: 'android-chrome-192x192', url: '/favicon/android-chrome-192x192.png' },
+      { rel: 'android-chrome-512x512', url: '/favicon/android-chrome-512x512.png' },
+    ],
+  },
+  manifest: '/favicon/site.webmanifest',
 };
 
 export default function RootLayout({

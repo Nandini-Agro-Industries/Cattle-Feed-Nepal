@@ -9,16 +9,18 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                     {/* Brand Info */}
                     <div className="space-y-4">
-                        <Link href="/" className="flex items-center gap-2">
-                            <div className="relative h-10 w-10">
+                        <Link href="/" className="flex flex-col items-start gap-3">
+                            <div className="relative h-28 w-72">
                                 <Image
-                                    src="/images/logo.png"
-                                    alt="Nandini Agro Logo"
+                                    src="/logo/logo.png"
+                                    alt="Nandani Agro Industries Pvt. Ltd. Logo"
                                     fill
                                     className="object-contain"
                                 />
                             </div>
-                            <span className="text-xl font-bold text-primary">Nandini Agro</span>
+                            <span className="text-lg font-bold text-primary leading-tight">
+                                Nandani Agro Industries Pvt. Ltd.
+                            </span>
                         </Link>
                         <p className="text-muted-foreground text-sm leading-relaxed">
                             Manufacturers of high-quality animal feed in Nepal. Dedicated to supporting farmers with nutritious feed for cattle, goats, and pigs.
@@ -58,7 +60,14 @@ export default function Footer() {
                         <ul className="space-y-3 text-sm text-muted-foreground">
                             <li className="flex items-start gap-3">
                                 <MapPin className="h-5 w-5 text-primary shrink-0" />
-                                <span>Omsatiya-2, Rupandehi, Nepal</span>
+                                <a
+                                    href="https://maps.app.goo.gl/8wJzW9uGCBGcui3B8"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-primary transition-colors"
+                                >
+                                    Omsatiya-2, Rupandehi, Nepal
+                                </a>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="h-5 w-5 text-primary shrink-0" />
@@ -85,7 +94,9 @@ export default function Footer() {
                                 <span className="sr-only">Facebook</span>
                             </a>
                             <a
-                                href="#"
+                                href="https://www.instagram.com/nandiniagroindustries/"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="bg-primary/10 p-2 rounded-full text-primary hover:bg-primary hover:text-white transition-all"
                             >
                                 <Instagram className="h-5 w-5" />
@@ -96,7 +107,7 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t pt-8 text-center text-sm text-muted-foreground">
-                    <p>&copy; {new Date().getFullYear()} Nandini Agro Industries Pvt. Ltd. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Nandani Agro Industries Pvt. Ltd. All rights reserved.</p>
                 </div>
             </div>
         </footer>

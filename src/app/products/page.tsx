@@ -5,7 +5,7 @@ import { products } from "@/data/products";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Our Products | Nandini Agro Industries",
+    title: "Our Products | Nandani Agro Industries Pvt. Ltd.",
     description: "Browse our complete range of high-quality animal feeds for cattle, goats, and pigs (Vanjula, Siddhartha brands).",
 };
 

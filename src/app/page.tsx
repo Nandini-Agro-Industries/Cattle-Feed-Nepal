@@ -45,7 +45,7 @@ const products = [
   {
     id: "bangur-ko-dana",
     name: "Bangur Ko Dana",
-    brand: "Nandini Agro",
+    brand: "Nandani Agro",
     image: "/images/bangur-ko-dana.png",
     description: "High-energy feed for pigs ensuring fast weight gain and healthy development.",
   },
@@ -87,7 +87,7 @@ export default function Home() {
               <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl group">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-secondary/80 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
                   <div className="text-center p-8 text-white">
-                    <h3 className="text-4xl font-bold mb-2">Nandini Agro</h3>
+                    <h3 className="text-4xl font-bold mb-2">Nandani Agro</h3>
                     <p className="text-xl opacity-90">Excellence in Animal Nutrition</p>
                   </div>
                 </div>
@@ -100,7 +100,7 @@ export default function Home() {
                   Empowering Farmers with <span className="text-primary">Quality Feed</span>
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Nandini Agro Industries Pvt. Ltd. is a leading manufacturer of animal feed in Nepal.
+                  Nandani Agro Industries Pvt. Ltd. is a leading manufacturer of animal feed in Nepal.
                   Based in Rupandehi, we are dedicated to empowering farmers by providing high-quality,
                   nutritious feed for cattle, goats, and pigs.
                 </p>
@@ -149,7 +149,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
         <div className="container mx-auto px-4 relative">
           <FadeIn>
-            <SectionHeading title="Why Choose Nandini Agro?" subtitle="We are committed to your success." />
+            <SectionHeading title="Why Choose Nandani Agro?" subtitle="We are committed to your success." />
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -190,9 +190,9 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "Nandini Agro Industries Pvt. Ltd.",
-            "url": "https://nandiniagro.com",
-            "logo": "https://nandiniagro.com/images/logo.png",
+            "name": "Nandani Agro Industries Pvt. Ltd.",
+            "url": "https://www.nandaniagro.com.np",
+            "logo": "https://www.nandaniagro.com.np/logo/logo.png",
             "contactPoint": {
               "@type": "ContactPoint",
               "telephone": "+977-9801412266",
@@ -207,7 +207,8 @@ export default function Home() {
               "addressCountry": "NP"
             },
             "sameAs": [
-              "https://www.facebook.com/vanjuladaana"
+              "https://www.facebook.com/vanjuladaana",
+              "https://www.instagram.com/nandiniagroindustries/"
             ]
           })
         }}

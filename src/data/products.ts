@@ -70,7 +70,7 @@ export const products = [
     {
         id: "bangur-ko-dana",
         name: "Bangur Ko Dana",
-        brand: "Nandini Agro",
+        brand: "Nandani Agro",
         image: "/images/bangur-ko-dana.png",
         description: "High-energy feed for pigs ensuring fast weight gain and healthy development.",
         features: [
