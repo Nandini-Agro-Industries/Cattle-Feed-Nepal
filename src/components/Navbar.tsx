@@ -12,6 +12,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "Products", href: "/products" },
   { name: "Contact", href: "/contact" },
+  { name: "Become a Dealer", href: "/become-dealer" },
 ];
 
 export default function Navbar() {

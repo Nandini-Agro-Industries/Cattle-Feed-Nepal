@@ -1,0 +1,77 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Privacy Policy | Nandani Agro Industries Pvt. Ltd.",
+    description: "Privacy Policy for Nandani Agro Industries Pvt. Ltd. Learn how we collect, use, and protect your information.",
+};
+
+export default function PrivacyPolicyPage() {
+    return (
+        <div className="bg-background min-h-screen pb-20 pt-12">
+            <div className="container mx-auto px-4 max-w-4xl">
+                <h1 className="text-4xl font-bold mb-8 text-foreground">Privacy Policy</h1>
+
+                <div className="prose prose-lg dark:prose-invert max-w-none space-y-8 text-muted-foreground">
+                    <p>
+                        Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                    </p>
+
+                    <section>
+                        <h2 className="text-2xl font-semibold text-foreground mb-4">1. Introduction</h2>
+                        <p>
+                            Welcome to Nandani Agro Industries Pvt. Ltd. We respect your privacy and are committed to protecting your personal data.
+                            This privacy policy will inform you as to how we look after your personal data when you visit our website
+                            and tell you about your privacy rights and how the law protects you.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 className="text-2xl font-semibold text-foreground mb-4">2. Information We Collect</h2>
+                        <p>
+                            We may collect, use, store and transfer different kinds of personal data about you which we have grouped together follows:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Identity Data:</strong> includes first name, last name, username or similar identifier.</li>
+                            <li><strong>Contact Data:</strong> includes email address and telephone numbers.</li>
+                            <li><strong>Technical Data:</strong> includes internet protocol (IP) address, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform and other technology on the devices you use to access this website.</li>
+                            <li><strong>Usage Data:</strong> includes information about how you use our website, products and services.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 className="text-2xl font-semibold text-foreground mb-4">3. How We Use Your Data</h2>
+                        <p>
+                            We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li>To respond to your inquiries and support needs.</li>
+                            <li>To improve our website, products/services, marketing and customer relationships.</li>
+                            <li>To comply with a legal or regulatory obligation.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 className="text-2xl font-semibold text-foreground mb-4">4. Data Security</h2>
+                        <p>
+                            We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed.
+                            In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 className="text-2xl font-semibold text-foreground mb-4">5. Contact Us</h2>
+                        <p>
+                            If you have any questions about this privacy policy or our privacy practices, please contact us at:
+                        </p>
+                        <div className="mt-4 p-4 bg-muted/50 rounded-lg">
+                            <p className="font-semibold text-foreground">Nandani Agro Industries Pvt. Ltd.</p>
+                            <p>Omsatiya-2, Rupandehi, Nepal</p>
+                            <p>Email: cattlefeednepal@gmail.com</p>
+                            <p>Phone: +977-9801412266</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    );
+}
