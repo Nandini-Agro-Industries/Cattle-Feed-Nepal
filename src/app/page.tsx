@@ -80,12 +80,12 @@ export default function Home() {
       <Hero />
 
       {/* About Section */}
-      <section className="py-12 md:py-24 bg-gradient-to-b from-background to-muted/30">
+      <section className="py-12 md:py-24 bg-linear-to-b from-background to-muted/30">
         <div className="container mx-auto px-4">
           <FadeIn>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
               <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl group">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-secondary/80 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+                <div className="absolute inset-0 bg-linear-to-br from-primary/80 to-secondary/80 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
                   <div className="text-center p-8 text-white">
                     <h3 className="text-4xl font-bold mb-2">Nandani Agro</h3>
                     <p className="text-xl opacity-90">Excellence in Animal Nutrition</p>
@@ -121,18 +121,14 @@ export default function Home() {
       {/* Products Section */}
       <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <FadeIn>
-            <SectionHeading
+          <SectionHeading
               title="Our Premium Products"
               subtitle="Explore our range of scientifically formulated feeds for every stage of livestock growth."
             />
-          </FadeIn>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => (
-              <FadeIn key={product.id} delay={index * 0.1}>
-                <ProductCard {...product} />
-              </FadeIn>
+              <ProductCard key={product.id} {...product} delay={index * 0.1} className="h-full" />
             ))}
           </div>
 
@@ -148,15 +144,13 @@ export default function Home() {
       <section className="py-12 md:py-24 bg-primary/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
         <div className="container mx-auto px-4 relative">
-          <FadeIn>
-            <SectionHeading title="Why Choose Nandani Agro?" subtitle="We are committed to your success." />
-          </FadeIn>
+          <SectionHeading title="Why Choose Nandani Agro?" subtitle="We are committed to your success." />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <FadeIn key={index} delay={index * 0.1}>
                 <div className="bg-background/50 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-border/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full">
-                  <div className="h-14 w-14 bg-gradient-to-br from-primary to-primary/60 rounded-xl flex items-center justify-center mb-6 text-white shadow-lg shadow-primary/20">
+                  <div className="h-14 w-14 bg-linear-to-br from-primary to-primary/60 rounded-xl flex items-center justify-center mb-6 text-white shadow-lg shadow-primary/20">
                     <feature.icon className="h-7 w-7" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
@@ -170,10 +164,10 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="py-12 md:py-24 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 to-transparent opacity-50" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-white/10 to-transparent opacity-50" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <FadeIn>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Ready to Boost Your Farm's Productivity?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Ready to Boost Your Farm&apos;s Productivity?</h2>
             <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto font-light">
               Contact us today for bulk orders, dealership inquiries, or nutritional advice.
             </p>
@@ -191,8 +185,8 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Nandani Agro Industries Pvt. Ltd.",
-            "url": "https://www.nandaniagro.com.np",
-            "logo": "https://www.nandaniagro.com.np/logo/logo.png",
+            "url": "https://www.cattlefeednepal.com",
+            "logo": "https://www.cattlefeednepal.com/logo/logo.png",
             "contactPoint": {
               "@type": "ContactPoint",
               "telephone": "+977-9801412266",
@@ -208,7 +202,8 @@ export default function Home() {
             },
             "sameAs": [
               "https://www.facebook.com/vanjuladaana",
-              "https://www.instagram.com/nandiniagroindustries/"
+              "https://www.instagram.com/nandiniagroindustries/",
+              "https://www.nandaniagro.com.np" 
             ]
           })
         }}

@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import FadeIn from "./FadeIn";
 
 interface SectionHeadingProps {
     title: string;
@@ -14,17 +15,15 @@ export default function SectionHeading({
     className,
 }: SectionHeadingProps) {
     return (
-        <div
-            className={cn(
-                "mb-12 space-y-4",
-                {
-                    "text-center": align === "center",
-                    "text-left": align === "left",
-                    "text-right": align === "right",
-                },
-                className
-            )}
-        >
+        <FadeIn className={cn(
+            "mb-12 space-y-4",
+            {
+                "text-center": align === "center",
+                "text-left": align === "left",
+                "text-right": align === "right",
+            },
+            className
+        )}>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
                 {title}
             </h2>
@@ -40,6 +39,6 @@ export default function SectionHeading({
                     "ml-auto": align === "right",
                 })}
             />
-        </div>
+        </FadeIn>
     );
 }

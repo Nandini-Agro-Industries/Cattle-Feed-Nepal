@@ -128,28 +128,54 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Product",
-                        "name": product.name,
-                        "image": `https://www.nandaniagro.com.np${product.image}`,
-                        "description": product.description,
-                        "brand": {
-                            "@type": "Brand",
-                            "name": product.brand
-                        },
-                        "offers": {
-                            "@type": "Offer",
-                            "url": `https://www.nandaniagro.com.np/products/${product.id}`,
-                            "priceCurrency": "NPR",
-                            "price": "0", // Price not listed, could use "availability": "https://schema.org/InStock"
-                            "availability": "https://schema.org/InStock",
-                            "seller": {
-                                "@type": "Organization",
-                                "name": "Nandani Agro Industries Pvt. Ltd."
+                    __html: JSON.stringify([
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "Product",
+                            "name": product.name,
+                            "image": `https://www.cattlefeednepal.com${product.image}`,
+                            "description": product.description,
+                            "brand": {
+                                "@type": "Brand",
+                                "name": product.brand
+                            },
+                            "offers": {
+                                "@type": "Offer",
+                                "url": `https://www.cattlefeednepal.com/products/${product.id}`,
+                                "priceCurrency": "NPR",
+                                "price": "0",
+                                "availability": "https://schema.org/InStock",
+                                "seller": {
+                                    "@type": "Organization",
+                                    "name": "Nandani Agro Industries Pvt. Ltd."
+                                }
                             }
+                        },
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://www.cattlefeednepal.com"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Products",
+                                    "item": "https://www.cattlefeednepal.com/products"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": product.name,
+                                    "item": `https://www.cattlefeednepal.com/products/${product.id}`
+                                }
+                            ]
                         }
-                    })
+                    ])
                 }}
             />
         </div >

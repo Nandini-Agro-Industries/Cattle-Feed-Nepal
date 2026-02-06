@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { products } from '@/data/products'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://www.nandaniagro.com.np'
+    const baseUrl = 'https://www.cattlefeednepal.com'
 
     // Static routes
     const routes = [
@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/contact',
         '/become-dealer',
         '/privacy-policy',
+        '/terms-of-service',
+        '/website-map',
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),

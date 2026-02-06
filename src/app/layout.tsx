@@ -15,12 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.nandaniagro.com.np"),
+  metadataBase: new URL("https://www.cattlefeednepal.com"),
   alternates: {
     canonical: './',
   },
   verification: {
-    google: "google-site-verification=YOUR_VERIFICATION_CODE", // Placeholder
+    google: "12xPuXV7UMwk82v3iV7LYOV03ssuJFCA12nv91S0Zeg",
   },
   title: {
     default: "Nandani Agro Industries Pvt. Ltd. | Premium Animal Feed in Nepal",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.nandaniagro.com.np",
+    url: "https://www.cattlefeednepal.com",
     title: "Nandani Agro Industries Pvt. Ltd. | Premium Animal Feed in Nepal",
     description: "Scientifically formulated feed for healthier livestock and higher yields.",
     siteName: "Nandani Agro Industries Pvt. Ltd.",
@@ -80,7 +80,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Navbar />
-        <main className="flex-grow pt-20">
+        <main className="grow pt-20">
           {children}
         </main>
         <Footer />

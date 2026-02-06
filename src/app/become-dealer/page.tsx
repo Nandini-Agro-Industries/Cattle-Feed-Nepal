@@ -86,7 +86,7 @@ export default function BecomeDealerPage() {
             />
 
             {/* Brand Aligned Hero Section - Light & Clean */}
-            <section className="relative overflow-hidden min-h-[50vh] flex items-center justify-center bg-gradient-to-b from-primary/5 to-white pt-32 pb-20">
+            <section className="relative overflow-hidden min-h-[50vh] flex items-center justify-center bg-linear-to-b from-primary/5 to-white pt-32 pb-20">
                 <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03]" />
 
                 <div className="container mx-auto px-4 relative z-10 text-center">

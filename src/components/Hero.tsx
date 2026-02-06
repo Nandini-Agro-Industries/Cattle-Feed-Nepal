@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-secondary/30 via-background to-background pt-20 pb-32 md:pt-32 md:pb-48">
+        <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-secondary/30 via-background to-background pt-20 pb-32 md:pt-32 md:pb-48">
             <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid-pattern.svg')] opacity-[0.03]" />
             <div className="container mx-auto px-4 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -36,7 +36,7 @@ export default function Hero() {
                             </span>
                         </h1>
                         <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
-                            Scientifically formulated feed for cattle, goats, and pigs. Maximize milk production and growth with Nandani Agro's proven nutrition.
+                            Scientifically formulated feed for cattle, goats, and pigs. Maximize milk production and growth with Nandani Agro&apos;s proven nutrition.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 pt-2">
                             <Button asChild size="lg" className="text-lg px-8 h-14 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">
@@ -56,7 +56,7 @@ export default function Hero() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="relative h-[300px] md:h-[600px] w-full flex items-center justify-center mt-8 md:mt-0"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-full blur-3xl opacity-30 animate-pulse" />
+                        <div className="absolute inset-0 bg-linear-to-tr from-primary/20 to-transparent rounded-full blur-3xl opacity-30 animate-pulse" />
 
                         <div className="relative w-full h-full max-w-lg mx-auto flex items-center justify-center">
                             {/* Left Image - Siddhartha Cattle Feed */}

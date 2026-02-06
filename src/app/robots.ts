@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://www.nandaniagro.com.np/sitemap.xml', // Replace with actual domain
+        sitemap: 'https://www.cattlefeednepal.com/sitemap.xml', // Replace with actual domain
     }
 }
