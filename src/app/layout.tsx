@@ -19,6 +19,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: './',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   verification: {
     google: "12xPuXV7UMwk82v3iV7LYOV03ssuJFCA12nv91S0Zeg",
   },
