@@ -25,10 +25,10 @@ export default function Hero() {
                             className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary shadow-sm"
                         >
                             <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
-                            Trusted by Farmers Across Nepal
+                            Nandani Agro Industries - Trusted in Nepal
                         </motion.div>
                         <h1 className="text-4xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
-                            Premium Nutrition for <span className="text-primary relative inline-block">
+                            Best Cattle Feed in Nepal for <span className="text-primary relative inline-block">
                                 Healthier Livestock
                                 <svg className="absolute w-full h-3 -bottom-1 left-0 text-secondary opacity-50" viewBox="0 0 100 10" preserveAspectRatio="none">
                                     <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />

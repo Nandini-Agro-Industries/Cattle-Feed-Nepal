@@ -34,19 +34,19 @@ export const metadata: Metadata = {
     google: "12xPuXV7UMwk82v3iV7LYOV03ssuJFCA12nv91S0Zeg",
   },
   title: {
-    default: "Nandani Agro Industries Pvt. Ltd. | Premium Animal Feed in Nepal",
-    template: "%s | Nandani Agro Industries Pvt. Ltd."
+    default: "Nandani Agro Industries | Best Cattle Feed in Nepal",
+    template: "%s | Nandani Agro Industries - Cattle Feed Nepal"
   },
-  description: "Leading manufacturer of high-quality cattle, goat, and pig feed in Nepal. Brands: Vanjula, Siddhartha. Scientifically formulated for maximum productivity.",
-  keywords: ["Animal Feed", "Cattle Feed", "Goat Feed", "Pig Feed", "Nepal", "Nandani Agro", "Vanjula", "Siddhartha", "Livestock Nutrition"],
+  description: "Nandani Agro Industries is the leading manufacturer of cattle feed in Nepal. Our premium brands Vanjula and Siddhartha are scientifically formulated for maximum productivity.",
+  keywords: ["Cattle Feed Nepal", "Nandani Agro Industries", "Animal Feed Nepal", "Goat Feed", "Pig Feed", "Livestock Nutrition", "Vanjula", "Siddhartha"],
   authors: [{ name: "Nandani Agro Industries Pvt. Ltd." }],
   creator: "Nandani Agro Industries Pvt. Ltd.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.cattlefeednepal.com",
-    title: "Nandani Agro Industries Pvt. Ltd. | Premium Animal Feed in Nepal",
-    description: "Scientifically formulated feed for healthier livestock and higher yields.",
+    title: "Nandani Agro Industries | Best Cattle Feed in Nepal",
+    description: "Leading manufacturer of cattle feed in Nepal. Scientifically formulated for healthier livestock and higher yields.",
     siteName: "Nandani Agro Industries Pvt. Ltd.",
     images: [
       {
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nandani Agro Industries Pvt. Ltd.",
-    description: "Premium Animal Feed Manufacturers in Nepal.",
+    title: "Nandani Agro Industries | Best Cattle Feed in Nepal",
+    description: "Premium Cattle Feed Manufacturers in Nepal. Vanjula and Siddhartha brands.",
     images: ["/images/vanjula-highpro.png"],
   },
   icons: {

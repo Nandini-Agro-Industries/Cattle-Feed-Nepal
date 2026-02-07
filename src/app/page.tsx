@@ -100,7 +100,7 @@ export default function Home() {
                   Empowering Farmers with <span className="text-primary">Quality Feed</span>
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Nandani Agro Industries Pvt. Ltd. is a leading manufacturer of animal feed in Nepal.
+                  Nandani Agro Industries Pvt. Ltd. is a leading manufacturer of cattle feed in Nepal.
                   Based in Rupandehi, we are dedicated to empowering farmers by providing high-quality,
                   nutritious feed for cattle, goats, and pigs.
                 </p>
