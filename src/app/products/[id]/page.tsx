@@ -112,6 +112,51 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                             </div>
                         )}
 
+                        {product.nutritionalInfo && (
+                            <div className="mt-4">
+                                <h3 className="text-xl font-semibold mb-4">Nutritional Information</h3>
+                                <div className="overflow-hidden rounded-xl border border-border">
+                                    <table className="w-full text-left text-sm">
+                                        <tbody className="divide-y divide-border">
+                                            <tr className="bg-muted/50">
+                                                <th className="px-4 py-3 font-medium text-foreground w-1/2">Crude Protein</th>
+                                                <td className="px-4 py-3 text-muted-foreground">{product.nutritionalInfo.crudeProtein}</td>
+                                            </tr>
+                                            <tr>
+                                                <th className="px-4 py-3 font-medium text-foreground w-1/2">Crude Fat</th>
+                                                <td className="px-4 py-3 text-muted-foreground">{product.nutritionalInfo.crudeFat}</td>
+                                            </tr>
+                                            <tr className="bg-muted/50">
+                                                <th className="px-4 py-3 font-medium text-foreground w-1/2">Crude Fiber</th>
+                                                <td className="px-4 py-3 text-muted-foreground">{product.nutritionalInfo.crudeFiber}</td>
+                                            </tr>
+                                            <tr>
+                                                <th className="px-4 py-3 font-medium text-foreground w-1/2">Moisture</th>
+                                                <td className="px-4 py-3 text-muted-foreground">{product.nutritionalInfo.moisture}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        )}
+
+                        {(product.feedingRate || product.ingredients) && (
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                                {product.feedingRate && (
+                                    <div className="bg-background p-5 rounded-xl border border-border shadow-sm">
+                                        <h3 className="font-semibold text-foreground mb-2">Feeding Rate</h3>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">{product.feedingRate}</p>
+                                    </div>
+                                )}
+                                {product.ingredients && (
+                                    <div className="bg-background p-5 rounded-xl border border-border shadow-sm">
+                                        <h3 className="font-semibold text-foreground mb-2">Ingredients</h3>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">{product.ingredients}</p>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
                         <div className="flex flex-col sm:flex-row gap-4 mt-4">
                             <Button asChild size="lg" className="flex-1">
                                 <Link href="/contact">Order Now</Link>
@@ -138,6 +183,10 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                             "brand": {
                                 "@type": "Brand",
                                 "name": product.brand
+                            },
+                            "manufacturer": {
+                                "@type": "Organization",
+                                "name": "Nandani Agro Industries Pvt. Ltd."
                             },
                             "offers": {
                                 "@type": "Offer",

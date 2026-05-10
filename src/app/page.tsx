@@ -100,17 +100,14 @@ export default function Home() {
                   Empowering Farmers with <span className="text-primary">Quality Feed</span>
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Nandani Agro Industries Pvt. Ltd. is a leading manufacturer of cattle feed in Nepal.
-                  Based in Rupandehi, we are dedicated to empowering farmers by providing high-quality,
-                  nutritious feed for cattle, goats, and pigs.
+                  Established with a vision to revolutionize livestock farming, Nandani Agro Industries Pvt. Ltd. is a leading manufacturer of premium cattle feed in Nepal.
+                  Based in Rupandehi, our state-of-the-art facility utilizes advanced milling technology to produce highly nutritious feed for cattle, goats, and pigs, ensuring maximum yield and animal health.
                 </p>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Our brands, <strong>Vanjula</strong> and <strong>Siddhartha</strong>, are trusted by thousands of farmers
-                  for their consistency and results. We combine traditional knowledge with modern nutritional science
-                  to create feeds that deliver real value.
+                  Our flagship brands, <strong>Vanjula</strong> and <strong>Siddhartha</strong>, are trusted by thousands of farmers across the nation. Adhering to strict quality standards and nutritional science, our products are formulated to deliver consistent, measurable results in dairy and meat production.
                 </p>
                 <Button asChild variant="outline" className="rounded-full px-8">
-                  <Link href="/contact">Learn More About Us</Link>
+                  <Link href="/about">Learn More About Us</Link>
                 </Button>
               </div>
             </div>
@@ -183,22 +180,38 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
+            "@type": "LocalBusiness",
             "name": "Nandani Agro Industries Pvt. Ltd.",
             "url": "https://www.cattlefeednepal.com",
             "logo": "https://www.cattlefeednepal.com/logo/logo.png",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+977-9801412266",
-              "contactType": "customer service",
-              "areaServed": "NP",
-              "availableLanguage": "English"
-            },
+            "image": "https://www.cattlefeednepal.com/logo/logo.png",
+            "description": "Leading manufacturer of premium cattle feed, goat feed, and pig feed in Rupandehi, Nepal. Manufacturer of Vanjula and Siddhartha brands.",
+            "telephone": "+977-9801412266",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Omsatiya-2",
               "addressLocality": "Rupandehi",
+              "addressRegion": "Lumbini",
+              "postalCode": "32900",
               "addressCountry": "NP"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 27.5256,
+              "longitude": 83.4975
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "09:00",
+              "closes": "18:00"
             },
             "sameAs": [
               "https://www.facebook.com/vanjuladaana",
