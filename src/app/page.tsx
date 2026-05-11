@@ -5,6 +5,13 @@ import FadeIn from "@/components/FadeIn";
 import { Button } from "@/components/ui/button";
 import { Award, Leaf, TrendingUp, Truck } from "lucide-react";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 const products = [
   {
@@ -178,47 +185,68 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Nandani Agro Industries Pvt. Ltd.",
-            "url": "https://www.cattlefeednepal.com",
-            "logo": "https://www.cattlefeednepal.com/logo/logo.png",
-            "image": "https://www.cattlefeednepal.com/logo/logo.png",
-            "description": "Leading manufacturer of premium cattle feed, goat feed, and pig feed in Rupandehi, Nepal. Manufacturer of Vanjula and Siddhartha brands.",
-            "telephone": "+977-9801412266",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Omsatiya-2",
-              "addressLocality": "Rupandehi",
-              "addressRegion": "Lumbini",
-              "postalCode": "32900",
-              "addressCountry": "NP"
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Nandani Agro Industries Pvt. Ltd.",
+              "url": "https://www.cattlefeednepal.com",
+              "logo": "https://www.cattlefeednepal.com/logo/logo.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+977-9801412266",
+                "contactType": "customer service",
+                "areaServed": "NP",
+                "availableLanguage": ["English", "Nepali"]
+              },
+              "sameAs": [
+                "https://www.facebook.com/vanjuladaana",
+                "https://www.instagram.com/nandiniagroindustries/",
+                "https://www.nandaniagro.com.np"
+              ]
             },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": 27.5256,
-              "longitude": 83.4975
-            },
-            "openingHoursSpecification": {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": [
-                "Sunday",
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday"
-              ],
-              "opens": "09:00",
-              "closes": "18:00"
-            },
-            "sameAs": [
-              "https://www.facebook.com/vanjuladaana",
-              "https://www.instagram.com/nandiniagroindustries/",
-              "https://www.nandaniagro.com.np" 
-            ]
-          })
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Nandani Agro Industries Pvt. Ltd.",
+              "url": "https://www.cattlefeednepal.com",
+              "logo": "https://www.cattlefeednepal.com/logo/logo.png",
+              "image": "https://www.cattlefeednepal.com/logo/logo.png",
+              "description": "Leading manufacturer of premium cattle feed, goat feed, and pig feed in Rupandehi, Nepal. Manufacturer of Vanjula and Siddhartha brands.",
+              "telephone": "+977-9801412266",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Omsatiya-2",
+                "addressLocality": "Rupandehi",
+                "addressRegion": "Lumbini",
+                "postalCode": "32900",
+                "addressCountry": "NP"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 27.5256,
+                "longitude": 83.4975
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Sunday",
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+              },
+              "sameAs": [
+                "https://www.facebook.com/vanjuladaana",
+                "https://www.instagram.com/nandiniagroindustries/",
+                "https://www.nandaniagro.com.np" 
+              ]
+            }
+          ])
         }}
       />
     </div>

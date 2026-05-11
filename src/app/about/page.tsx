@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Us | Nandani Agro Industries Pvt. Ltd.",
     description: "Learn about Nandani Agro Industries, a leading manufacturer of premium cattle feed in Nepal.",
+  },
+  alternates: {
+    canonical: '/about',
   }
 };
 

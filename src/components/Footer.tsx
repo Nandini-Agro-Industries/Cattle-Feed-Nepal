@@ -126,7 +126,7 @@ export default function Footer() {
                                 <a
                                     href="https://fossatechnology.com.np/"
                                     target="_blank"
-                                    rel="noopener noreferrer"
+                                    rel="nofollow noopener noreferrer"
                                     className="text-primary hover:underline font-medium"
                                 >
                                     Fossa Technology

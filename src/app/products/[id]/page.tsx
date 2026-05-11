@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { products } from "@/data/products";
+import ProductCard from "@/components/ProductCard";
 import { Metadata } from "next";
 
 // This function generates the static paths for all products at build time
@@ -26,6 +27,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     return {
         title: `${product.name} | Nandani Agro Industries Pvt. Ltd.`,
         description: product.description,
+        alternates: {
+            canonical: `/products/${product.id}`,
+        },
         openGraph: {
             title: `${product.name} | Nandani Agro Industries Pvt. Ltd.`,
             description: product.description,
@@ -93,7 +97,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
 
                         {product.features && (
                             <div>
-                                <h3 className="text-xl font-semibold mb-4">Key Features</h3>
+                                <h2 className="text-xl font-semibold mb-4">Key Features</h2>
                                 <ul className="grid grid-cols-1 gap-3">
                                     {product.features.map((feature, index) => (
                                         <li key={index} className="flex items-start gap-3 text-muted-foreground">
@@ -107,14 +111,14 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
 
                         {product.benefits && (
                             <div className="bg-primary/5 p-6 rounded-xl border border-primary/10">
-                                <h3 className="font-semibold text-primary mb-2">Benefits</h3>
+                                <h2 className="font-semibold text-primary mb-2">Benefits</h2>
                                 <p className="text-muted-foreground">{product.benefits}</p>
                             </div>
                         )}
 
                         {product.nutritionalInfo && (
                             <div className="mt-4">
-                                <h3 className="text-xl font-semibold mb-4">Nutritional Information</h3>
+                                <h2 className="text-xl font-semibold mb-4">Nutritional Information</h2>
                                 <div className="overflow-hidden rounded-xl border border-border">
                                     <table className="w-full text-left text-sm">
                                         <tbody className="divide-y divide-border">
@@ -144,13 +148,13 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                                 {product.feedingRate && (
                                     <div className="bg-background p-5 rounded-xl border border-border shadow-sm">
-                                        <h3 className="font-semibold text-foreground mb-2">Feeding Rate</h3>
+                                        <h2 className="font-semibold text-foreground mb-2">Feeding Rate</h2>
                                         <p className="text-sm text-muted-foreground leading-relaxed">{product.feedingRate}</p>
                                     </div>
                                 )}
                                 {product.ingredients && (
                                     <div className="bg-background p-5 rounded-xl border border-border shadow-sm">
-                                        <h3 className="font-semibold text-foreground mb-2">Ingredients</h3>
+                                        <h2 className="font-semibold text-foreground mb-2">Ingredients</h2>
                                         <p className="text-sm text-muted-foreground leading-relaxed">{product.ingredients}</p>
                                     </div>
                                 )}
@@ -166,6 +170,20 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                                 <Link href="/contact">Request Details</Link>
                             </Button>
                         </div>
+                    </div>
+                </div>
+
+                {/* Related Products Section */}
+                <div className="mt-24 border-t pt-16">
+                    <h2 className="text-3xl font-bold mb-8 text-foreground text-center">Related Products</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {products
+                            .filter(p => p.id !== product.id)
+                            .sort((a, b) => (a.brand === product.brand ? -1 : 1))
+                            .slice(0, 3)
+                            .map((p, index) => (
+                                <ProductCard key={p.id} {...p} delay={index * 0.1} />
+                            ))}
                     </div>
                 </div>
             </div>
