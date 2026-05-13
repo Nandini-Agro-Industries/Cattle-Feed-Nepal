@@ -5,11 +5,12 @@ import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | Nandani Agro Industries Pvt. Ltd.",
+  title: "About Us",
   description: "Learn about Nandani Agro Industries, a leading manufacturer of premium cattle feed in Nepal. Discover our history, certifications, and commitment to quality.",
   openGraph: {
-    title: "About Us | Nandani Agro Industries Pvt. Ltd.",
+    title: "About Us",
     description: "Learn about Nandani Agro Industries, a leading manufacturer of premium cattle feed in Nepal.",
+    images: ['/images/og/og-about.png'],
   },
   alternates: {
     canonical: '/about',

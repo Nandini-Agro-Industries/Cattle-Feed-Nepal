@@ -1,8 +1,11 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Terms of Service | Nandani Agro Industries Pvt. Ltd.",
+    title: "Terms of Service",
     description: "Terms of Service for Nandani Agro Industries Pvt. Ltd. Read our terms and conditions for using our website and services.",
+    alternates: {
+        canonical: '/terms-of-service',
+    },
 };
 
 export default function TermsOfServicePage() {

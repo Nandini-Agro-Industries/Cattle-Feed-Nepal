@@ -5,8 +5,14 @@ import { products } from "@/data/products";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Our Products | Nandani Agro Industries Pvt. Ltd.",
+    title: "Our Products",
     description: "Browse our complete range of high-quality animal feeds for cattle, goats, and pigs (Vanjula, Siddhartha brands).",
+    alternates: {
+        canonical: '/products',
+    },
+    openGraph: {
+        images: ['/images/og/og-products.png'],
+    },
 };
 
 export default function ProductsPage() {

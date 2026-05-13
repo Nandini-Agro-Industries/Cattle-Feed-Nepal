@@ -6,8 +6,11 @@ import FadeIn from "@/components/FadeIn";
 import { ArrowRight, FileText, Home, Layers, Package, Phone, Shield, Users } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Sitemap | Nandani Agro Industries Pvt. Ltd.",
+    title: "Sitemap",
     description: "Complete overview of pages on the Nandani Agro Industries website.",
+    alternates: {
+        canonical: '/website-map',
+    },
 };
 
 export default function SitemapPage() {

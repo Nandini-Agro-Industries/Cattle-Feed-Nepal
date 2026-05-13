@@ -1,8 +1,11 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Privacy Policy | Nandani Agro Industries Pvt. Ltd.",
+    title: "Privacy Policy",
     description: "Privacy Policy for Nandani Agro Industries Pvt. Ltd. Learn how we collect, use, and protect your information.",
+    alternates: {
+        canonical: '/privacy-policy',
+    },
 };
 
 export default function PrivacyPolicyPage() {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, CheckCircle2, ChevronRight, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
@@ -25,13 +25,13 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     }
 
     return {
-        title: `${product.name} | Nandani Agro Industries Pvt. Ltd.`,
+        title: product.name,
         description: product.description,
         alternates: {
             canonical: `/products/${product.id}`,
         },
         openGraph: {
-            title: `${product.name} | Nandani Agro Industries Pvt. Ltd.`,
+            title: product.name,
             description: product.description,
             images: [
                 {
@@ -56,13 +56,31 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
     return (
         <div className="bg-background min-h-screen pb-20 pt-24">
             <div className="container mx-auto px-4">
-                {/* Back Button */}
-                <Button asChild variant="ghost" className="mb-8 pl-0 hover:pl-2 transition-all">
-                    <Link href="/products">
-                        <ArrowLeft className="mr-2 h-4 w-4" />
-                        Back to Products
-                    </Link>
-                </Button>
+                {/* Breadcrumbs Navigation */}
+                <nav className="flex items-center text-sm text-muted-foreground mb-8" aria-label="Breadcrumb">
+                    <ol className="flex items-center space-x-2 flex-wrap">
+                        <li>
+                            <Link href="/" className="flex items-center hover:text-primary transition-colors">
+                                <Home className="h-4 w-4 mr-1" />
+                                <span className="sr-only">Home</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <ChevronRight className="h-4 w-4 text-border" />
+                        </li>
+                        <li>
+                            <Link href="/products" className="hover:text-primary transition-colors font-medium">
+                                Products
+                            </Link>
+                        </li>
+                        <li>
+                            <ChevronRight className="h-4 w-4 text-border" />
+                        </li>
+                        <li className="text-foreground font-semibold line-clamp-1" aria-current="page">
+                            {product.name}
+                        </li>
+                    </ol>
+                </nav>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                     {/* Product Image */}
@@ -171,6 +189,62 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                             </Button>
                         </div>
                     </div>
+                </div>
+
+                {/* Additional Information Sections */}
+                <div className="mt-16 space-y-16">
+                    {/* Usage Guide */}
+                    {product.usageGuide && (
+                        <div className="bg-primary/5 rounded-2xl p-8 md:p-12 border border-primary/10">
+                            <h2 className="text-2xl font-bold mb-6 text-foreground">Usage Guide</h2>
+                            <ul className="space-y-4">
+                                {product.usageGuide.map((step: string, index: number) => (
+                                    <li key={index} className="flex gap-4 items-start">
+                                        <div className="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0 font-bold text-sm">
+                                            {index + 1}
+                                        </div>
+                                        <p className="text-muted-foreground mt-1 leading-relaxed">{step}</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
+                    {/* Testimonials */}
+                    {product.testimonials && (
+                        <div>
+                            <h2 className="text-2xl font-bold mb-8 text-foreground text-center">What Farmers Say</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                {product.testimonials.map((testimonial: any, index: number) => (
+                                    <div key={index} className="bg-background border rounded-2xl p-8 shadow-sm relative">
+                                        <div className="absolute top-6 right-6 text-primary/20 text-6xl font-serif">"</div>
+                                        <p className="text-muted-foreground italic mb-6 relative z-10 leading-relaxed">
+                                            "{testimonial.quote}"
+                                        </p>
+                                        <div>
+                                            <p className="font-bold text-foreground">{testimonial.author}</p>
+                                            <p className="text-sm text-primary font-medium">{testimonial.location}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* FAQs */}
+                    {product.faqs && (
+                        <div className="max-w-4xl mx-auto">
+                            <h2 className="text-2xl font-bold mb-8 text-foreground text-center">Frequently Asked Questions</h2>
+                            <div className="space-y-6">
+                                {product.faqs.map((faq: any, index: number) => (
+                                    <div key={index} className="border-b pb-6">
+                                        <h3 className="text-lg font-bold text-foreground mb-3">{faq.question}</h3>
+                                        <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
 
                 {/* Related Products Section */}

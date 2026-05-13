@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { products } from '@/data/products'
+import { blogPosts } from '@/data/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.cattlefeednepal.com'
@@ -9,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '',
         '/about',
         '/products',
+        '/blog',
         '/contact',
         '/become-dealer',
         '/privacy-policy',
@@ -29,5 +31,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.9,
     }))
 
-    return [...routes, ...productRoutes]
+    // Dynamic blog routes
+    const blogRoutes = blogPosts.map((post) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: new Date(post.date),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+    }))
+
+    return [...routes, ...productRoutes, ...blogRoutes]
 }

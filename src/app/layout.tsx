@@ -34,16 +34,26 @@ export const metadata: Metadata = {
     default: "Cattle Feed Manufacturers in Nepal | Nandani Agro Industries",
     template: "%s | Nandani Agro"
   },
-  description: "Nandani Agro Industries is the leading manufacturer of cattle feed in Nepal. Our premium brands Vanjula and Siddhartha are scientifically formulated for maximum productivity.",
+  description: "Nandani Agro Industries is Nepal's leading cattle feed manufacturer. Our premium brands Vanjula and Siddhartha are formulated for maximum productivity.",
   authors: [{ name: "Nandani Agro Industries Pvt. Ltd." }],
   creator: "Nandani Agro Industries Pvt. Ltd.",
+  keywords: [
+    "Cattle Feed Nepal",
+    "Nandani Agro Industries",
+    "Vanjula Pashu Aahar",
+    "Siddhartha Cattle Feed",
+    "Dairy Cattle Nutrition",
+    "Goat Feed Nepal",
+    "Pig Feed Nepal",
+    "Rupandehi Feed Manufacturer"
+  ],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.cattlefeednepal.com/",
-    title: "Vanjula & Siddhartha Feed | Cattle Feed Manufacturers in Rupandehi, Nepal",
+    title: "Cattle Feed Manufacturers in Nepal | Nandani Agro Industries",
     // OG description now matches meta description for consistent Facebook sharing
-    description: "Nandani Agro Industries is the leading manufacturer of cattle feed in Nepal. Our premium brands Vanjula and Siddhartha are scientifically formulated for maximum productivity.",
+    description: "Nandani Agro Industries is Nepal's leading cattle feed manufacturer. Our premium brands Vanjula and Siddhartha are formulated for maximum productivity.",
     siteName: "Nandani Agro Industries Pvt. Ltd.",
     images: [
       {

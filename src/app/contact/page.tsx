@@ -5,8 +5,14 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Contact Us | Nandani Agro Industries Pvt. Ltd.",
+    title: "Contact Us",
     description: "Get in touch with Nandani Agro Industries Pvt. Ltd. for orders, dealership inquiries, or support. Call +977-9801412266.",
+    alternates: {
+        canonical: '/contact',
+    },
+    openGraph: {
+        images: ['/images/og/og-contact.png'],
+    },
 };
 
 export default function ContactPage() {

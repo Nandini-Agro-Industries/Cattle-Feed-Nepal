@@ -3,11 +3,25 @@ import ProductCard from "@/components/ProductCard";
 import SectionHeading from "@/components/SectionHeading";
 import FadeIn from "@/components/FadeIn";
 import { Button } from "@/components/ui/button";
-import { Award, Leaf, TrendingUp, Truck } from "lucide-react";
+import { Award, Leaf, TrendingUp, Truck, BookOpen, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { blogPosts } from "@/data/blog";
+import Image from "next/image";
 
 export const metadata: Metadata = {
+  title: "Cattle Feed Manufacturers in Nepal | Nandani Agro Industries",
+  description: "Nandani Agro Industries is Nepal's leading manufacturer of premium cattle feed, goat feed, and pig feed. Discover our high-protein Vanjula and Siddhartha brands designed for maximum livestock productivity.",
+  keywords: [
+    "Cattle Feed Nepal",
+    "Nandani Agro Industries",
+    "Vanjula Feed",
+    "Siddhartha Feed",
+    "Animal Nutrition Nepal",
+    "Best Cattle Feed Rupandehi",
+    "Dairy Cow Feed Nepal",
+    "Livestock Feed Manufacturer Nepal"
+  ],
   alternates: {
     canonical: '/',
   },
@@ -110,8 +124,11 @@ export default function Home() {
                   Established with a vision to revolutionize livestock farming, Nandani Agro Industries Pvt. Ltd. is a leading manufacturer of premium cattle feed in Nepal.
                   Based in Rupandehi, our state-of-the-art facility utilizes advanced milling technology to produce highly nutritious feed for cattle, goats, and pigs, ensuring maximum yield and animal health.
                 </p>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                   Our flagship brands, <strong>Vanjula</strong> and <strong>Siddhartha</strong>, are trusted by thousands of farmers across the nation. Adhering to strict quality standards and nutritional science, our products are formulated to deliver consistent, measurable results in dairy and meat production.
+                </p>
+                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                  We believe that a thriving agricultural sector starts with healthy animals. That is why our formulations focus on holistic animal wellness, integrating balanced proteins, bypass fats, and essential trace minerals. From rural family farms to large commercial dairy operations, we provide tailored feeding solutions that improve milk fat content, enhance reproductive health, and boost overall herd immunity.
                 </p>
                 <Button asChild variant="outline" className="rounded-full px-8">
                   <Link href="/about">Learn More About Us</Link>
@@ -160,6 +177,83 @@ export default function Home() {
                   <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Nutrition Science Section */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <FadeIn>
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                Comprehensive Livestock Nutrition in Nepal
+              </h2>
+              <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-8" />
+            </div>
+            <div className="max-w-4xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed text-left md:text-justify">
+              <p>
+                At Nandani Agro Industries, we understand that high-quality livestock feed is the cornerstone of successful farming in Nepal. Dairy farmers, poultry breeders, and livestock owners face unique challenges related to climate, breed genetics, and seasonal forage availability. To address these factors, our dedicated team of agricultural experts and animal nutritionists has developed a comprehensive range of feed solutions tailored specifically for the local environment.
+              </p>
+              <p>
+                Our advanced formulation process integrates the latest in bypass protein technology, essential amino acid balancing, and mineral supplementation. This scientific approach ensures that your cattle, goats, and pigs receive the precise nutrients they need at every life stage—from early growth to peak lactation. By focusing on gut health and nutrient absorption, our feeds not only increase milk yield and weight gain but also strengthen the animal&apos;s natural immune system against common diseases.
+              </p>
+              <p>
+                Furthermore, we source only the highest quality raw materials, including premium grains, oilcakes, and vitamin premixes. Every batch undergoes rigorous laboratory testing to guarantee safety, consistency, and nutritional integrity. Whether you are managing a small family farm or a large-scale commercial dairy operation, our Vanjula and Siddhartha brands provide the reliable, cost-effective nutrition required to maximize your profitability and ensure the long-well-being of your herd. By choosing Nandani Agro, you are investing in sustainable agricultural practices and the future of livestock farming in Nepal.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="py-12 md:py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div className="max-w-2xl">
+              <div className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-4">
+                Knowledge Hub
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Latest from the Blog</h2>
+              <p className="mt-4 text-lg text-muted-foreground">Expert insights and guides to help you maximize your farm&apos;s productivity.</p>
+            </div>
+            <Button asChild variant="outline" className="rounded-full">
+              <Link href="/blog" className="flex items-center">
+                View All Articles <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {blogPosts.slice(0, 2).map((post, index) => (
+              <FadeIn key={post.id} delay={index * 0.1}>
+                <Link href={`/blog/${post.slug}`} className="group flex flex-col h-full bg-background rounded-3xl overflow-hidden border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <div className="relative h-64 w-full overflow-hidden">
+                    <Image
+                      src={post.coverImage}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-8 flex flex-col grow">
+                    <div className="flex items-center gap-2 text-sm text-primary font-bold mb-3 uppercase tracking-wider">
+                      <BookOpen className="h-4 w-4" />
+                      Guide
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <p className="text-muted-foreground line-clamp-3 mb-6 grow">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex items-center text-sm font-bold text-primary">
+                      Read Article <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </div>
+                </Link>
               </FadeIn>
             ))}
           </div>
@@ -239,6 +333,15 @@ export default function Home() {
                 ],
                 "opens": "09:00",
                 "closes": "18:00"
+              },
+              "areaServed": {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                  "@type": "GeoCoordinates",
+                  "latitude": 27.5256,
+                  "longitude": 83.4975
+                },
+                "geoRadius": "500000"
               },
               "sameAs": [
                 "https://www.facebook.com/vanjuladaana",

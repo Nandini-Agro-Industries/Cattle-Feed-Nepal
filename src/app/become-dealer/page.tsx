@@ -6,13 +6,17 @@ import FadeIn from "@/components/FadeIn";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Become a Dealer | Nandani Agro Industries",
+    title: "Become a Dealer",
     description: "Join our network of successful distributors. Apply to become an authorized dealer for Nandani Agro Industries, Nepal's leading animal feed manufacturer.",
     openGraph: {
-        title: "Become a Dealer | Nandani Agro Industries",
+        title: "Become a Dealer",
         description: "Partner with us to distribute high-quality cattle, goat, and pig feed.",
         url: "https://nandaniagro.com.np/become-dealer",
         type: "website",
+        images: ['/images/og/og-dealer.png'],
+    },
+    alternates: {
+        canonical: '/become-dealer',
     },
 };
 
