@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Metadata } from "next";
+import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 
 export const metadata: Metadata = {
     title: "Contact Us",
@@ -95,7 +96,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-lg">Email</h3>
-                                        <p className="text-muted-foreground">cattlefeednepal@gmail.com</p>
+                                        <ObfuscatedEmail email="cattlefeednepal@gmail.com" className="text-muted-foreground" />
                                     </div>
                                 </div>
                             </div>

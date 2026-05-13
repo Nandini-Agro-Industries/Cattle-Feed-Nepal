@@ -5,23 +5,19 @@ import { blogPosts } from '@/data/blog'
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.cattlefeednepal.com'
 
-    // Static routes
-    const routes = [
-        '',
-        '/about',
-        '/products',
-        '/blog',
-        '/contact',
-        '/become-dealer',
-        '/privacy-policy',
-        '/terms-of-service',
-        '/website-map',
-    ].map((route) => ({
-        url: `${baseUrl}${route}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: route === '' ? 1 : 0.8,
-    }))
+    // Static routes — lastModified dates reflect actual content edits, not build time.
+    // Using real dates prevents Google from treating every crawl as a "just updated" signal.
+    const staticRoutes: MetadataRoute.Sitemap = [
+        { url: `${baseUrl}`,                    lastModified: new Date('2025-05-13'), changeFrequency: 'monthly', priority: 1.0 },
+        { url: `${baseUrl}/about`,              lastModified: new Date('2025-04-01'), changeFrequency: 'monthly', priority: 0.8 },
+        { url: `${baseUrl}/products`,           lastModified: new Date('2025-04-01'), changeFrequency: 'weekly',  priority: 0.9 },
+        { url: `${baseUrl}/blog`,               lastModified: new Date('2025-05-13'), changeFrequency: 'weekly',  priority: 0.8 },
+        { url: `${baseUrl}/contact`,            lastModified: new Date('2025-04-01'), changeFrequency: 'yearly',  priority: 0.7 },
+        { url: `${baseUrl}/become-dealer`,      lastModified: new Date('2025-04-01'), changeFrequency: 'yearly',  priority: 0.7 },
+        { url: `${baseUrl}/privacy-policy`,     lastModified: new Date('2025-04-01'), changeFrequency: 'yearly',  priority: 0.3 },
+        { url: `${baseUrl}/terms-of-service`,   lastModified: new Date('2025-04-01'), changeFrequency: 'yearly',  priority: 0.3 },
+        { url: `${baseUrl}/website-map`,        lastModified: new Date('2025-04-01'), changeFrequency: 'monthly', priority: 0.4 },
+    ]
 
     // Dynamic product routes
     const productRoutes = products.map((product) => ({
@@ -39,5 +35,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
     }))
 
-    return [...routes, ...productRoutes, ...blogRoutes]
+    return [...staticRoutes, ...productRoutes, ...blogRoutes]
 }

@@ -7,6 +7,8 @@ export interface BlogPost {
     coverImage: string;
     date: string;
     author: string;
+    authorTitle: string;
+    authorBio: string;
     tags: string[];
 }
 
@@ -18,7 +20,9 @@ export const blogPosts: BlogPost[] = [
         excerpt: "Nepal's average dairy cow yields just 627 kg per lactation—less than a third of the global average. Learn 10 proven, farmer-tested strategies to double your milk output using better feed, breed selection, and herd management.",
         coverImage: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1200&h=630&fit=crop&q=80",
         date: "2025-01-01",
-        author: "Nandani Agro Industries",
+        author: "Nandani Agro Industries Nutrition Team",
+        authorTitle: "Animal Feed Formulation Specialists",
+        authorBio: "The Nandani Agro Industries Nutrition Team comprises qualified veterinary nutritionists and agricultural scientists based in Rupandehi, Nepal. Their formulations are developed in alignment with NARC guidelines and field-validated across Nepal's diverse livestock regions.",
         tags: ["Dairy Farming", "Milk Production", "Nepal", "Cattle Feed", "Management"],
         content: `
             <p>Nepal's dairy farmers are sitting on enormous untapped potential — yet most cows are producing far less milk than they're genetically capable of delivering.</p>
@@ -420,7 +424,7 @@ export const blogPosts: BlogPost[] = [
 
             <div class="bg-primary/10 border-l-4 border-primary p-6 my-8 rounded-r-lg">
                 <p class="font-bold text-lg mb-2 text-foreground">Ready to boost your farm's milk output?</p>
-                <p>Contact <strong>Nandani Agro Industries</strong> at <strong>+977-9801412266</strong> or email <strong>cattlefeednepal@gmail.com</strong> for bulk feed orders, nutritional advice, or dealer enquiries. Find them at Omsatiya-2, Rupandehi, Nepal — or explore the full Vanjula and Siddhartha feed range at <a href="/products" class="text-primary hover:underline font-semibold">cattlefeednepal.com/products &rarr;</a></p>
+                <p>Contact <strong>Nandani Agro Industries</strong> at <strong>+977-9801412266</strong> or email <strong>cattlefeednepal&#64;gmail&#46;com</strong> for bulk feed orders, nutritional advice, or dealer enquiries. Find them at Omsatiya-2, Rupandehi, Nepal — or explore the full Vanjula and Siddhartha feed range at <a href="/products" class="text-primary hover:underline font-semibold">cattlefeednepal.com/products &rarr;</a></p>
             </div>
 
             <p class="text-xs text-muted-foreground italic mt-8">Sources: Nepalese Journal of Agricultural Sciences (2013, 2021); Journal of Agriculture and Natural Resources (2019); MDPI Agriculture (2022); Heifer International / FoodNavigator-Asia (2024); ILRI / NEXUS Gains Initiative (2023); Nepal Veterinary Journal (2017); National Cattle Research Program, Rampur, Chitwan.</p>
@@ -433,7 +437,9 @@ export const blogPosts: BlogPost[] = [
         excerpt: "Choosing the wrong cattle feed costs Nepali dairy farmers thousands of rupees in lost milk every month. Compare Vanjula HighPro, Vanjula Bypass, Vanjula Pashu Aahar, and Siddhartha feeds — with exact protein specs, feeding rates, and a guide on which product fits your herd.",
         coverImage: "/images/best-cattle-feed-feature.png",
         date: "2025-01-01",
-        author: "Nandani Agro Industries",
+        author: "Nandani Agro Industries Nutrition Team",
+        authorTitle: "Animal Feed Formulation Specialists",
+        authorBio: "The Nandani Agro Industries Nutrition Team comprises qualified veterinary nutritionists and agricultural scientists based in Rupandehi, Nepal. Their formulations are developed in alignment with NARC guidelines and field-validated across Nepal's diverse livestock regions.",
         tags: ["cattle feed Nepal", "best cattle feed dairy cows Nepal", "Vanjula feed", "Siddhartha cattle feed", "dairy cow nutrition Nepal"],
         content: `
             <p>Choosing the right cattle feed is the single most leveraged decision you make for your dairy business — and in Nepal, most farmers are leaving serious money on the table by getting it wrong.</p>
@@ -838,7 +844,7 @@ export const blogPosts: BlogPost[] = [
             <p>In almost all cases, yes. At NPR 55–60 per litre of farm-gate milk, every extra litre per day earns you around NPR 1,600–1,800/month. If Vanjula HighPro delivers even 1–2 extra litres daily compared to a homemixed ration — a conservative estimate given the research — the feed cost is recovered several times over in milk revenue.</p>
 
             <h3 class="text-xl font-bold mt-6 mb-2 text-foreground">Where can I buy Vanjula and Siddhartha feed in Nepal?</h3>
-            <p>Nandani Agro Industries supplies directly to farmers and through an authorised dealer network across Nepal. Contact them at <strong>+977-9801412266</strong> or <strong>cattlefeednepal@gmail.com</strong>, or visit the factory at Omsatiya-2, Rupandehi, Nepal. Bulk orders and dealership enquiries are welcome.</p>
+            <p>Nandani Agro Industries supplies directly to farmers and through an authorised dealer network across Nepal. Contact them at <strong>+977-9801412266</strong> or <strong>cattlefeednepal&#64;gmail&#46;com</strong>, or visit the factory at Omsatiya-2, Rupandehi, Nepal. Bulk orders and dealership enquiries are welcome.</p>
 
             <hr class="my-8" />
 
@@ -848,7 +854,7 @@ export const blogPosts: BlogPost[] = [
 
             <div class="bg-primary/10 border-l-4 border-primary p-6 my-8 rounded-r-lg">
                 <p class="font-bold text-lg mb-2 text-foreground">Ready to upgrade your herd's nutrition?</p>
-                <p>Contact <strong>Nandani Agro Industries</strong> at <strong>+977-9801412266</strong> or <strong>cattlefeednepal@gmail.com</strong> to place a bulk order, find your nearest dealer, or get personalised feeding advice. Visit <a href="/products" class="text-primary hover:underline font-semibold">our full product range &rarr;</a></p>
+                <p>Contact <strong>Nandani Agro Industries</strong> at <strong>+977-9801412266</strong> or <strong>cattlefeednepal&#64;gmail&#46;com</strong> to place a bulk order, find your nearest dealer, or get personalised feeding advice. Visit <a href="/products" class="text-primary hover:underline font-semibold">our full product range &rarr;</a></p>
             </div>
 
             <p class="text-xs text-muted-foreground italic mt-8">Sources: Nandani Agro Industries product specifications (cattlefeednepal.com); Nepalese Journal of Agricultural Sciences (Osti et al., 2013); Oregon State University Extension — Feeding the Dairy Cow During Lactation; Merck Veterinary Manual — Nutritional Requirements of Dairy Cattle (2025); National Cattle Research Program, Rampur, Chitwan; NARC Lamjung District Field Trial (2021).</p>

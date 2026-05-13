@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 
 export const metadata: Metadata = {
     title: "Terms of Service",
@@ -69,7 +70,7 @@ export default function TermsOfServicePage() {
                         <div className="mt-4 p-4 bg-muted/50 rounded-lg">
                             <p className="font-semibold text-foreground">Nandani Agro Industries Pvt. Ltd.</p>
                             <p>Omsatiya-2, Rupandehi, Nepal</p>
-                            <p>Email: cattlefeednepal@gmail.com</p>
+                            <p>Email: <ObfuscatedEmail email="cattlefeednepal@gmail.com" /></p>
                             <p>Phone: +977-9801412266</p>
                         </div>
                     </section>

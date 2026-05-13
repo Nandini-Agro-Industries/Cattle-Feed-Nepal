@@ -7,6 +7,7 @@ import { Menu, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import ObfuscatedEmail from "./ObfuscatedEmail";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -46,6 +47,7 @@ export default function Navbar() {
               alt="Nandani Agro Industries Pvt. Ltd. Logo"
               fill
               className="object-contain"
+              sizes="(max-width: 768px) 192px, 288px"
             />
           </div>
         </Link>
@@ -88,6 +90,7 @@ export default function Navbar() {
                       alt="Nandani Agro Industries Pvt. Ltd. Logo"
                       fill
                       className="object-contain"
+                      sizes="192px"
                     />
                   </div>
                 </Link>
@@ -109,7 +112,7 @@ export default function Navbar() {
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="h-4 w-4" />
-                    <span>cattlefeednepal@gmail.com</span>
+                    <ObfuscatedEmail email="cattlefeednepal@gmail.com" />
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin className="h-4 w-4" />

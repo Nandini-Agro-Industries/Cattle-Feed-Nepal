@@ -1,9 +1,10 @@
+import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
-import ProductCard from "@/components/ProductCard";
-import SectionHeading from "@/components/SectionHeading";
-import FadeIn from "@/components/FadeIn";
-import { Button } from "@/components/ui/button";
-import { Award, Leaf, TrendingUp, Truck, BookOpen, ArrowRight } from "lucide-react";
+const ProductCard = dynamic(() => import("@/components/ProductCard"));
+const SectionHeading = dynamic(() => import("@/components/SectionHeading"));
+const FadeIn = dynamic(() => import("@/components/FadeIn"));
+const Button = dynamic(() => import("@/components/ui/button").then((mod) => mod.Button));
+import { Award, Leaf, TrendingUp, Truck, BookOpen, ArrowRight, Calendar } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { blogPosts } from "@/data/blog";
@@ -105,14 +106,15 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <FadeIn>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-              <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl group">
-                <Image
-                  src="/images/nandani-agro-manufacturing.png"
-                  alt="Modern state-of-the-art animal feed manufacturing facility"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
+               <div className="relative aspect-4/3 md:aspect-square lg:aspect-4/3 rounded-2xl overflow-hidden shadow-2xl group h-auto">
+                 <Image
+                   src="/images/nandani-agro-manufacturing.png"
+                   alt="Modern state-of-the-art animal feed manufacturing facility"
+                   fill
+                   className="object-cover transition-transform duration-500 group-hover:scale-105"
+                   sizes="(max-width: 768px) 100vw, 50vw"
+                 />
+               </div>
               <div>
                 <div className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-4">
                   About Us
@@ -191,7 +193,11 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
                 Comprehensive Livestock Nutrition in Nepal
               </h2>
-              <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-8" />
+              <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-6" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-medium text-primary mb-6">
+                <Calendar className="h-3.5 w-3.5" />
+                Content reviewed &amp; updated — 2025
+              </div>
             </div>
             <div className="max-w-4xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed text-left md:text-justify">
               <p>
@@ -230,18 +236,27 @@ export default function Home() {
             {blogPosts.slice(0, 2).map((post, index) => (
               <FadeIn key={post.id} delay={index * 0.1}>
                 <Link href={`/blog/${post.slug}`} className="group flex flex-col h-full bg-background rounded-3xl overflow-hidden border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                  <div className="relative h-64 w-full overflow-hidden">
+                   <div className="relative aspect-video w-full overflow-hidden">
                     <Image
                       src={post.coverImage}
                       alt={post.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
                   <div className="p-8 flex flex-col grow">
-                    <div className="flex items-center gap-2 text-sm text-primary font-bold mb-3 uppercase tracking-wider">
-                      <BookOpen className="h-4 w-4" />
-                      Guide
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-2 text-sm text-primary font-bold uppercase tracking-wider">
+                        <BookOpen className="h-4 w-4" />
+                        Guide
+                      </div>
+                      <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                        <Calendar className="h-3.5 w-3.5" />
+                        <time dateTime={post.date}>
+                          {new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
+                        </time>
+                      </div>
                     </div>
                     <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors line-clamp-2">
                       {post.title}
@@ -286,6 +301,7 @@ export default function Home() {
               "name": "Nandani Agro Industries Pvt. Ltd.",
               "url": "https://www.cattlefeednepal.com",
               "logo": "https://www.cattlefeednepal.com/logo/logo.png",
+              "foundingDate": "2015",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+977-9801412266",
@@ -346,8 +362,25 @@ export default function Home() {
               "sameAs": [
                 "https://www.facebook.com/vanjuladaana",
                 "https://www.instagram.com/nandiniagroindustries/",
-                "https://www.nandaniagro.com.np" 
+                "https://www.nandaniagro.com.np"
               ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "@id": "https://www.cattlefeednepal.com/#webpage",
+              "url": "https://www.cattlefeednepal.com/",
+              "name": "Cattle Feed Manufacturers in Nepal | Nandani Agro Industries",
+              "description": "Nepal's leading manufacturer of premium cattle feed, goat feed, and pig feed. Vanjula and Siddhartha brands trusted by thousands of farmers.",
+              "datePublished": "2025-01-01",
+              "dateModified": "2025-05-13",
+              "inLanguage": "en-US",
+              "isPartOf": {
+                "@type": "WebSite",
+                "@id": "https://www.cattlefeednepal.com/#website",
+                "url": "https://www.cattlefeednepal.com/",
+                "name": "Nandani Agro Industries Pvt. Ltd."
+              }
             }
           ])
         }}

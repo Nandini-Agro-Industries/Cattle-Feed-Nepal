@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import FadeIn from "./FadeIn";
+import ObfuscatedEmail from "./ObfuscatedEmail";
 
 export default function Footer() {
     return (
@@ -11,7 +12,7 @@ export default function Footer() {
                     {/* Brand Info */}
                     <FadeIn delay={0}>
                         <div className="space-y-4">
-                            <Link href="/" className="flex flex-col items-start gap-3">
+                            <Link href="/" prefetch={false} className="flex flex-col items-start gap-3">
                                 <div className="relative h-28 w-72">
                                     <Image
                                         src="/logo/logo.png"
@@ -36,22 +37,22 @@ export default function Footer() {
                             <h3 className="font-semibold mb-4 text-foreground">Quick Links</h3>
                             <ul className="space-y-2 text-sm text-muted-foreground">
                                 <li>
-                                    <Link href="/" className="hover:text-primary transition-colors">
+                                    <Link href="/" prefetch={false} className="hover:text-primary transition-colors">
                                         Home
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/products" className="hover:text-primary transition-colors">
+                                    <Link href="/products" prefetch={false} className="hover:text-primary transition-colors">
                                         Our Products
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/contact" className="hover:text-primary transition-colors">
+                                    <Link href="/contact" prefetch={false} className="hover:text-primary transition-colors">
                                         Contact Us
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/become-dealer" className="hover:text-primary transition-colors">
+                                    <Link href="/become-dealer" prefetch={false} className="hover:text-primary transition-colors">
                                         Become a Dealer
                                     </Link>
                                 </li>
@@ -82,7 +83,7 @@ export default function Footer() {
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <Mail className="h-5 w-5 text-primary shrink-0" />
-                                    <span>cattlefeednepal@gmail.com</span>
+                                    <ObfuscatedEmail email="cattlefeednepal@gmail.com" />
                                 </li>
                             </ul>
                         </div>
@@ -134,13 +135,13 @@ export default function Footer() {
                             </p>
                         </div>
                         <div className="flex gap-6">
-                            <Link href="/privacy-policy" className="hover:text-primary transition-colors">
+                            <Link href="/privacy-policy" prefetch={false} className="hover:text-primary transition-colors">
                                 Privacy Policy
                             </Link>
-                            <Link href="/terms-of-service" className="hover:text-primary transition-colors">
+                            <Link href="/terms-of-service" prefetch={false} className="hover:text-primary transition-colors">
                                 Terms of Service
                             </Link>
-                            <Link href="/website-map" className="hover:text-primary transition-colors">
+                            <Link href="/website-map" prefetch={false} className="hover:text-primary transition-colors">
                                 Sitemap
                             </Link>
                         </div>

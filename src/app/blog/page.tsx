@@ -38,12 +38,13 @@ export default function BlogPage() {
                         <FadeIn key={post.id} delay={index * 0.1}>
                             <div className="bg-card border rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col h-full group">
                                 {/* Image Container */}
-                                <Link href={`/blog/${post.slug}`} className="relative h-60 w-full bg-secondary/20 block overflow-hidden">
+                                <Link href={`/blog/${post.slug}`} className="relative aspect-video w-full bg-secondary/20 block overflow-hidden">
                                     <Image
                                         src={post.coverImage}
                                         alt={post.title}
                                         fill
                                         className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     />
                                     <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                                         {post.tags[0]}

@@ -19,7 +19,7 @@ export default function ProductCard({ id, name, image, description, brand, delay
     return (
         <FadeIn className={className} delay={delay}>
             <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col h-full group border-border/50">
-                <div className="relative h-64 w-full bg-secondary/20 p-6 flex items-center justify-center overflow-hidden">
+                <div className="relative aspect-square w-full bg-secondary/20 p-6 flex items-center justify-center overflow-hidden">
                     <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-105">
                         <Image
                             src={image}
@@ -39,7 +39,7 @@ export default function ProductCard({ id, name, image, description, brand, delay
                 </CardContent>
                 <CardFooter>
                     <Button asChild variant="outline" className="w-full group-hover:bg-primary group-hover:text-white transition-colors">
-                        <Link href={`/products/${id}`}>
+                        <Link href={`/products/${id}`} prefetch={false}>
                             View Details <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                     </Button>

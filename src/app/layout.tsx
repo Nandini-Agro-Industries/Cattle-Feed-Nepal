@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,12 +7,14 @@ import Footer from "@/components/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#450a0a", // Matches the primary color oklch(0.45 0.15 140)
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.cattlefeednepal.com"),
@@ -29,6 +31,10 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "12xPuXV7UMwk82v3iV7LYOV03ssuJFCA12nv91S0Zeg",
+  },
+  other: {
+    'preconnect': 'https://images.unsplash.com',
+    'dns-prefetch': 'https://images.unsplash.com',
   },
   title: {
     default: "Cattle Feed Manufacturers in Nepal | Nandani Agro Industries",
@@ -90,7 +96,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
+        className={`${geistSans.variable} antialiased flex flex-col min-h-screen`}
         suppressHydrationWarning
       >
         <Navbar />
