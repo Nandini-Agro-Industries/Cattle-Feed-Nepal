@@ -114,10 +114,10 @@ export default function AboutPage() {
           <FadeIn className="order-1 md:order-2">
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-xl bg-muted/50 border flex items-center justify-center p-8">
                <Image 
-                  src="/logo/logo.png" 
-                  alt="Nandani Agro Industries Facility" 
+                  src="/images/nandani-agro-manufacturing.png" 
+                  alt="Modern animal feed manufacturing facility" 
                   fill
-                  className="object-contain p-12 opacity-80"
+                  className="object-cover"
                />
                <div className="absolute inset-0 bg-linear-to-tr from-primary/10 to-transparent mix-blend-multiply" />
             </div>

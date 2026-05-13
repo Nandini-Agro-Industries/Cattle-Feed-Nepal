@@ -107,17 +107,11 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
               <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl group">
                 <Image
-                  src="/images/nandani-agro-facility.png"
-                  alt="Nandani Agro state-of-the-art manufacturing facility"
+                  src="/images/nandani-agro-manufacturing.png"
+                  alt="Modern state-of-the-art animal feed manufacturing facility"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent flex items-end p-8 transition-opacity duration-500 group-hover:opacity-90">
-                  <div className="text-white">
-                    <h3 className="text-3xl font-bold mb-1">Nandani Agro</h3>
-                    <p className="text-lg opacity-90 font-light tracking-wide">Excellence in Animal Nutrition</p>
-                  </div>
-                </div>
               </div>
               <div>
                 <div className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-4">

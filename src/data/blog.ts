@@ -651,7 +651,7 @@ export const blogPosts: BlogPost[] = [
             <p>The inclusion of <strong>molasses</strong> gives this feed excellent palatability — especially valuable in Nepal's hilly regions where cattle can be selective eaters during dry winter months. At 18% crude protein, this feed meets the minimum protein requirement for lactating dairy cows in mid lactation — the phase when energy balance turns positive and cows are rebuilding body reserves.</p>
 
             <figure class="my-8">
-                <img src="/images/vanjula-pashu-aahar.png" alt="Dairy cows grazing in a lush field — ideal for balanced all-round feed supplementation" class="rounded-2xl shadow-md w-full" />
+                <img src="/images/vanjula-content.png" alt="Dairy cows grazing in a lush field — ideal for balanced all-round feed supplementation" class="rounded-2xl shadow-md w-full" />
                 <figcaption class="text-center text-sm text-muted-foreground mt-3 italic">Vanjula Pashu Aahar provides balanced nutrition for maintenance and consistent milk quality.</figcaption>
             </figure>
 
@@ -670,7 +670,7 @@ export const blogPosts: BlogPost[] = [
             <p><strong>The bottom line:</strong> Siddhartha Cattle Feed is the economical choice for general cattle maintenance, moderate-production cows, and farms where keeping feed costs low is the priority.</p>
 
             <figure class="my-8">
-                <img src="/images/siddhartha-cattle-feed.png" alt="Dairy cattle in a clean, traditional barn setup" class="rounded-2xl shadow-md w-full" />
+                <img src="/images/siddhartha-content.png" alt="Dairy cattle in a clean, traditional barn setup" class="rounded-2xl shadow-md w-full" />
                 <figcaption class="text-center text-sm text-muted-foreground mt-3 italic">Siddhartha Cattle Feed works well for mixed herds, late-lactation cows, and farms managing feed budgets carefully.</figcaption>
             </figure>
 
