@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion, LazyMotion, domMax } from "framer-motion";
+import { motion, LazyMotion, domAnimation } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Hero() {
     return (
-        <LazyMotion features={domMax}>
+        <LazyMotion features={domAnimation}>
             <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-secondary/30 via-background to-background pt-20 pb-32 md:pt-32 md:pb-48">
                 <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid-pattern.svg')] opacity-[0.03]" />
                 <div className="container mx-auto px-4 relative z-10">
@@ -72,6 +72,7 @@ export default function Hero() {
                                         alt="Siddhartha Cattle Feed"
                                         fill
                                         className="object-contain drop-shadow-xl"
+                                        priority
                                         sizes="(max-width: 768px) 128px, 192px"
                                     />
                                 </motion.div>
@@ -88,6 +89,7 @@ export default function Hero() {
                                         alt="Vanjula Pashu Aahar"
                                         fill
                                         className="object-contain drop-shadow-xl"
+                                        priority
                                         sizes="(max-width: 768px) 128px, 192px"
                                     />
                                 </motion.div>
