@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   keywords: [
     "Cattle Feed Nepal",
     "Nandani Agro Industries",
+    "Nandini Agro Industries",
     "Vanjula Feed",
     "Siddhartha Feed",
     "Animal Nutrition Nepal",
@@ -191,7 +192,7 @@ export default function Home() {
           <FadeIn>
             <div className="max-w-4xl mx-auto text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-                Comprehensive Livestock Nutrition in Nepal
+                Best Cattle Feed in Nepal | Nandani Agro Industries
               </h2>
               <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-6" />
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-medium text-primary mb-6">

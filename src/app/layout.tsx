@@ -46,6 +46,7 @@ export const metadata: Metadata = {
   keywords: [
     "Cattle Feed Nepal",
     "Nandani Agro Industries",
+    "Nandini Agro Industries",
     "Vanjula Pashu Aahar",
     "Siddhartha Cattle Feed",
     "Dairy Cattle Nutrition",

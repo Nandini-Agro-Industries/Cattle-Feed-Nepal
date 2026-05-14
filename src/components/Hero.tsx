@@ -29,8 +29,8 @@ export default function Hero() {
                                 Nandani Agro Industries - Trusted in Nepal
                             </motion.div>
                             <h1 className="text-4xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
-                                Best Cattle Feed in Nepal for <span className="text-primary relative inline-block">
-                                    Healthier Livestock
+                                Best Cattle Feed in Nepal by <span className="text-primary relative inline-block">
+                                    Nandani Agro
                                     <svg className="absolute w-full h-3 -bottom-1 left-0 text-secondary opacity-50" viewBox="0 0 100 10" preserveAspectRatio="none">
                                         <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
                                     </svg>
