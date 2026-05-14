@@ -4,7 +4,7 @@ const ProductCard = dynamic(() => import("@/components/ProductCard"));
 const SectionHeading = dynamic(() => import("@/components/SectionHeading"));
 const FadeIn = dynamic(() => import("@/components/FadeIn"));
 const Button = dynamic(() => import("@/components/ui/button").then((mod) => mod.Button));
-import { Award, Leaf, TrendingUp, Truck, BookOpen, ArrowRight, Calendar } from "lucide-react";
+import { Award, Leaf, TrendingUp, Truck, BookOpen, ArrowRight, Calendar, HelpCircle } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { blogPosts } from "@/data/blog";
@@ -12,7 +12,7 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Cattle Feed Manufacturers in Nepal | Nandani Agro Industries",
-  description: "Nandani Agro Industries is Nepal's leading manufacturer of premium cattle feed, goat feed, and pig feed. Discover our high-protein Vanjula and Siddhartha brands designed for maximum livestock productivity.",
+  description: "Nandani Agro Industries is Nepal's leading cattle, goat & pig feed manufacturer. Discover our premium Vanjula & Siddhartha brands for maximum livestock yield.",
   keywords: [
     "Cattle Feed Nepal",
     "Nandani Agro Industries",
@@ -95,6 +95,25 @@ const features = [
     title: "Reliable Supply",
     description: "Consistent availability and distribution network across the region.",
   },
+];
+
+const faqs = [
+  {
+    question: "What is the best cattle feed in Nepal?",
+    answer: "Nandani Agro Industries produces some of the most trusted and scientifically formulated cattle feed in Nepal. Our Vanjula and Siddhartha brands are specifically designed to meet the nutritional requirements of local dairy cattle, boosting milk yield and overall herd health."
+  },
+  {
+    question: "Where is Nandani Agro Industries located?",
+    answer: "Nandani Agro Industries Pvt. Ltd. is proudly located in Omsatiya-2, Rupandehi, in the Lumbini province of Nepal. We have a robust distribution network that supplies our premium animal nutrition products, including goat feed and pig feed, to farmers all across the nation."
+  },
+  {
+    question: "Why should I choose Vanjula Pashu Aahar for my dairy cows?",
+    answer: "Vanjula Pashu Aahar, especially our HighPro and Bypass variants, utilizes advanced bypass protein technology. This ensures better nutrient absorption in the lower gut, leading to higher milk production, increased fat content, and improved reproductive health for your dairy cows in Nepal."
+  },
+  {
+    question: "Do you manufacture feed for animals other than cattle?",
+    answer: "Yes! Alongside being a leading cattle feed manufacturer, Nandani Agro Industries also produces high-quality Siddhartha Goat Feed (Bakhra Ko Dana) and Bangur Ko Dana for pigs. These feeds are formulated for rapid growth, strong immunity, and overall well-being."
+  }
 ];
 
 export default function Home() {
@@ -212,6 +231,33 @@ export default function Home() {
               </p>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-12 md:py-24 bg-primary/5 border-y border-border/50">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title="Frequently Asked Questions"
+            subtitle="Learn more about Nandani Agro Industries and our premium animal nutrition products."
+          />
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            {faqs.map((faq, index) => (
+              <FadeIn key={index} delay={index * 0.1}>
+                <div className="bg-background p-8 rounded-2xl shadow-sm border border-border/50 h-full hover:shadow-md transition-shadow">
+                  <div className="flex gap-4 items-start">
+                    <div className="shrink-0 mt-1 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                      <HelpCircle className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-3 text-foreground leading-snug">{faq.question}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -382,6 +428,18 @@ export default function Home() {
                 "url": "https://www.cattlefeednepal.com/",
                 "name": "Nandani Agro Industries Pvt. Ltd."
               }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": faqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.answer
+                }
+              }))
             }
           ])
         }}
