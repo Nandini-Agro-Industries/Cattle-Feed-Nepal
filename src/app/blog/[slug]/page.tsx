@@ -5,6 +5,9 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, User, Tag, Home, ChevronRight } from "lucide-react";
 import { blogPosts } from "@/data/blog";
 import { Button } from "@/components/ui/button";
+import { PortableText } from '@portabletext/react';
+import { client } from "@/sanity/lib/client";
+import { postBySlugQuery } from "@/sanity/lib/queries";
 
 // Generate static params for all blog posts
 export function generateStaticParams() {
@@ -15,7 +18,13 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
-    const post = blogPosts.find((p) => p.slug === slug);
+    let post = blogPosts.find((p) => p.slug === slug) as any;
+    try {
+        const sanityPost = await client.fetch(postBySlugQuery, { slug });
+        if (sanityPost) {
+            post = sanityPost;
+        }
+    } catch (e) {}
 
     if (!post) {
         return {
@@ -50,7 +59,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const post = blogPosts.find((p) => p.slug === slug);
+    let post = blogPosts.find((p) => p.slug === slug) as any;
+    try {
+        const sanityPost = await client.fetch(postBySlugQuery, { slug });
+        if (sanityPost) {
+            post = sanityPost;
+        }
+    } catch (e) {
+        console.warn("Sanity fetch failed or not configured yet. Falling back to static data.");
+    }
 
     if (!post) {
         notFound();
@@ -127,9 +144,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </div>
 
                 {/* Main Content */}
-                <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary hover:prose-a:text-primary/80 prose-strong:text-foreground prose-strong:font-bold prose-img:rounded-2xl"
-                     dangerouslySetInnerHTML={{ __html: post.content }} 
-                />
+                <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary hover:prose-a:text-primary/80 prose-strong:text-foreground prose-strong:font-bold prose-img:rounded-2xl">
+                    {typeof post.content === 'string' ? (
+                        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                    ) : (
+                        <PortableText value={post.content} />
+                    )}
+                </div>
 
                 {/* Footer Section */}
                 <footer className="mt-16 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-6">

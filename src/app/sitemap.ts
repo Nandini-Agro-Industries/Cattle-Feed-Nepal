@@ -1,8 +1,10 @@
 import { MetadataRoute } from 'next'
 import { products } from '@/data/products'
 import { blogPosts } from '@/data/blog'
+import { client } from "@/sanity/lib/client"
+import { allPostsQuery } from "@/sanity/lib/queries"
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://www.cattlefeednepal.com'
 
     // Static routes — lastModified dates reflect actual content edits, not build time.
@@ -30,7 +32,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
 
     // Dynamic blog routes
-    const blogRoutes = blogPosts.map((post) => ({
+    let posts = blogPosts;
+    try {
+        const sanityPosts = await client.fetch(allPostsQuery);
+        if (sanityPosts && sanityPosts.length > 0) {
+            posts = sanityPosts;
+        }
+    } catch (e) {
+        console.warn("Sanity fetch failed in sitemap. Falling back to static data.");
+    }
+
+    const blogRoutes = posts.map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
         lastModified: new Date(post.date),
         changeFrequency: 'monthly' as const,

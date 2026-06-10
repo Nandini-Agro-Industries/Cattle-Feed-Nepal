@@ -4,6 +4,8 @@ import Image from "next/image";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { blogPosts } from "@/data/blog";
 import FadeIn from "@/components/FadeIn";
+import { client } from "@/sanity/lib/client";
+import { allPostsQuery } from "@/sanity/lib/queries";
 
 export const metadata: Metadata = {
     title: "Blog & Farming Insights",
@@ -13,7 +15,17 @@ export const metadata: Metadata = {
     },
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+    let posts = blogPosts;
+    try {
+        const sanityPosts = await client.fetch(allPostsQuery);
+        if (sanityPosts && sanityPosts.length > 0) {
+            posts = sanityPosts;
+        }
+    } catch (e) {
+        console.warn("Sanity fetch failed or not configured yet. Falling back to static data.");
+    }
+
     return (
         <div className="bg-background min-h-screen pb-20">
             {/* Header */}
@@ -34,7 +46,7 @@ export default function BlogPage() {
             {/* Blog Grid */}
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {blogPosts.map((post, index) => (
+                    {posts.map((post, index) => (
                         <FadeIn key={post.id} delay={index * 0.1}>
                             <div className="bg-card border rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col h-full group">
                                 {/* Image Container */}
@@ -47,7 +59,7 @@ export default function BlogPage() {
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     />
                                     <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                                        {post.tags[0]}
+                                        {post.tags && post.tags.length > 0 ? post.tags[0] : 'Article'}
                                     </div>
                                 </Link>
 

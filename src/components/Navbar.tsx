@@ -48,6 +48,7 @@ export default function Navbar() {
               src="/logo/logo.png"
               alt="Nandani Agro Industries Pvt. Ltd. Logo"
               fill
+              priority
               className="object-contain"
               sizes="(max-width: 768px) 192px, 288px"
             />
@@ -91,6 +92,7 @@ export default function Navbar() {
                       src="/logo/logo.png"
                       alt="Nandani Agro Industries Pvt. Ltd. Logo"
                       fill
+                      priority
                       className="object-contain"
                       sizes="192px"
                     />

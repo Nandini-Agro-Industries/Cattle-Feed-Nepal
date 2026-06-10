@@ -19,6 +19,7 @@ export default function Footer() {
                                         alt="Nandani Agro Industries Pvt. Ltd. Logo"
                                         fill
                                         className="object-contain"
+                                        sizes="288px"
                                     />
                                 </div>
                                 <span className="text-lg font-bold text-primary leading-tight">
