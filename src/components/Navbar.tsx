@@ -14,6 +14,8 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Products", href: "/products" },
   { name: "Blog", href: "/blog" },
+  { name: "Feed Calculator", href: "/tools/feed-calculator" },
+  { name: "Profit Calculator", href: "/tools/profit-calculator" },
   { name: "Contact", href: "/contact" },
   { name: "Become a Dealer", href: "/become-dealer" },
 ];

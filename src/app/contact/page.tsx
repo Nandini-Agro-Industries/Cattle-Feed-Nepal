@@ -1,17 +1,25 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Metadata } from "next";
 import ObfuscatedEmail from "@/components/ObfuscatedEmail";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-    title: "Contact Us",
-    description: "Get in touch with Nandani Agro Industries Pvt. Ltd. for orders, dealership inquiries, or support. Call +977-9801412266.",
+    title: "Contact Nandani Agro Industries | Pashu Aahar Order Nepal",
+    description: "Order cattle feed (गाईको दाना), goat feed, or pig feed in Nepal. Contact Nandani Agro Industries at +977-9801412266. Located in Omsatiya-2, Rupandehi.",
+    keywords: [
+        "cattle feed order Nepal",
+        "pashu aahar order Nepal",
+        "गाईको दाना order",
+        "animal feed contact Rupandehi",
+        "Nandani Agro phone number",
+        "cattle feed bulk order Nepal",
+    ],
     alternates: {
         canonical: '/contact',
     },
     openGraph: {
+        title: "Contact Nandani Agro Industries | Pashu Aahar Order Nepal",
+        description: "Order cattle feed, goat feed, or pig feed in Nepal. Call +977-9801412266. Located in Omsatiya-2, Rupandehi.",
         images: ['/images/og/og-contact.png'],
     },
 };
@@ -34,27 +42,7 @@ export default function ContactPage() {
                     <div className="space-y-8">
                         <div>
                             <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
-                            <form className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div className="space-y-2">
-                                        <label htmlFor="name" className="text-sm font-medium">Name</label>
-                                        <Input id="name" placeholder="Your Name" />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label htmlFor="phone" className="text-sm font-medium">Phone</label>
-                                        <Input id="phone" placeholder="Your Phone Number" />
-                                    </div>
-                                </div>
-                                <div className="space-y-2">
-                                    <label htmlFor="email" className="text-sm font-medium">Email</label>
-                                    <Input id="email" type="email" placeholder="your@email.com" />
-                                </div>
-                                <div className="space-y-2">
-                                    <label htmlFor="message" className="text-sm font-medium">Message</label>
-                                    <Textarea id="message" placeholder="How can we help you?" className="min-h-[150px]" />
-                                </div>
-                                <Button size="lg" className="w-full md:w-auto">Send Message</Button>
-                            </form>
+                            <ContactForm />
                         </div>
                     </div>
 

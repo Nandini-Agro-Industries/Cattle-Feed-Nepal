@@ -3,6 +3,8 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MotionProvider from "@/components/MotionProvider";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
     default: "Cattle Feed Manufacturers in Nepal | Nandani Agro Industries",
     template: "%s | Nandani Agro"
   },
-  description: "Nandani Agro Industries is Nepal's leading cattle feed manufacturer. Our premium brands Vanjula and Siddhartha are formulated for maximum productivity.",
+  description: "Nandani Agro Industries is Nepal's leading cattle, goat & pig feed manufacturer. Discover our premium Vanjula & Siddhartha brands for maximum livestock yield.",
   authors: [{ name: "Nandani Agro Industries Pvt. Ltd." }],
   creator: "Nandani Agro Industries Pvt. Ltd.",
   keywords: [
@@ -52,7 +54,14 @@ export const metadata: Metadata = {
     "Dairy Cattle Nutrition",
     "Goat Feed Nepal",
     "Pig Feed Nepal",
-    "Rupandehi Feed Manufacturer"
+    "Rupandehi Feed Manufacturer",
+    "पशु आहार नेपाल",
+    "गाईको दाना",
+    "बाख्राको दाना",
+    "pashu aahar Nepal",
+    "gai ko dana",
+    "bakhra ko dana",
+    "dudh barne dana",
   ],
   openGraph: {
     type: "website",
@@ -60,7 +69,7 @@ export const metadata: Metadata = {
     url: "https://www.cattlefeednepal.com/",
     title: "Cattle Feed Manufacturers in Nepal | Nandani Agro Industries",
     // OG description now matches meta description for consistent Facebook sharing
-    description: "Nandani Agro Industries is Nepal's leading cattle feed manufacturer. Our premium brands Vanjula and Siddhartha are formulated for maximum productivity.",
+    description: "Nandani Agro Industries is Nepal's leading cattle, goat & pig feed manufacturer. Discover our premium Vanjula & Siddhartha brands for maximum livestock yield.",
     siteName: "Nandani Agro Industries Pvt. Ltd.",
     images: [
       {
@@ -100,11 +109,14 @@ export default function RootLayout({
         className={`${geistSans.variable} antialiased flex flex-col min-h-screen`}
         suppressHydrationWarning
       >
-        <Navbar />
-        <main className="grow pt-20">
-          {children}
-        </main>
-        <Footer />
+        <MotionProvider>
+          <Navbar />
+          <main className="grow pt-20">
+            {children}
+          </main>
+          <Footer />
+          <WhatsAppButton />
+        </MotionProvider>
       </body>
     </html>
   );

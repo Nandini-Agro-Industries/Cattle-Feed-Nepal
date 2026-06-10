@@ -6,11 +6,20 @@ import FadeIn from "@/components/FadeIn";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Become a Dealer",
-    description: "Join our network of successful distributors. Apply to become an authorized dealer for Nandani Agro Industries, Nepal's leading animal feed manufacturer.",
+    title: "Become a Cattle Feed Dealer in Nepal | Nandani Agro Industries",
+    description: "Apply to become an authorized cattle feed dealer in Nepal. Join Nandani Agro's network of 500+ distributors and sell premium Vanjula & Siddhartha animal feed across Nepal.",
+    keywords: [
+        "cattle feed dealer Nepal",
+        "animal feed distributor Nepal",
+        "pashu aahar dealer Nepal",
+        "feed dealer Rupandehi",
+        "Vanjula feed dealer",
+        "Siddhartha feed distributor",
+        "animal feed dealership Nepal",
+    ],
     openGraph: {
-        title: "Become a Dealer",
-        description: "Partner with us to distribute high-quality cattle, goat, and pig feed.",
+        title: "Become a Cattle Feed Dealer in Nepal | Nandani Agro Industries",
+        description: "Join 500+ authorized distributors selling premium Vanjula & Siddhartha cattle feed across Nepal. Apply online — our team responds within 24 hours.",
         url: "https://nandaniagro.com.np/become-dealer",
         type: "website",
         images: ['/images/og/og-dealer.png'],
@@ -99,7 +108,7 @@ export default function BecomeDealerPage() {
                             Business Opportunity
                         </span>
                         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-foreground">
-                            Partner With <span className="text-primary">Nandini Agro</span>
+                            Partner With <span className="text-primary">Nandani Agro</span>
                         </h1>
                         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
                             Join our growing network of distributors and help us bring high-quality animal nutrition to every farm in Nepal.

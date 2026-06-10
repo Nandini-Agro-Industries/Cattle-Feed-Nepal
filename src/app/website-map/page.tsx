@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { products } from "@/data/products";
+import { blogPosts } from "@/data/blog";
 import SectionHeading from "@/components/SectionHeading";
 import FadeIn from "@/components/FadeIn";
-import { ArrowRight, FileText, Home, Layers, Package, Phone, Shield, Users } from "lucide-react";
+import { ArrowRight, BookOpen, Calculator, FileText, Home, Layers, Package, Phone, Shield, Users } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Sitemap",
@@ -18,6 +19,8 @@ export default function SitemapPage() {
         { name: "Home", href: "/", icon: Home },
         { name: "About Us", href: "/#about", icon: Users },
         { name: "Our Products", href: "/products", icon: Package },
+        { name: "Feed Calculator", href: "/tools/feed-calculator", icon: Calculator },
+        { name: "Profit Calculator", href: "/tools/profit-calculator", icon: Calculator },
         { name: "Contact Us", href: "/contact", icon: Phone },
         { name: "Become a Dealer", href: "/become-dealer", icon: Layers },
     ];
@@ -85,6 +88,28 @@ export default function SitemapPage() {
                         </FadeIn>
 
                         <FadeIn delay={0.3}>
+                            <div className="space-y-6">
+                                <h2 className="text-2xl font-bold text-foreground border-b pb-2">Blog Articles</h2>
+                                <ul className="space-y-3">
+                                    {blogPosts.map((post) => (
+                                        <li key={post.slug}>
+                                            <Link
+                                                href={`/blog/${post.slug}`}
+                                                className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+                                            >
+                                                <div className="bg-primary/10 p-2 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                                    <BookOpen className="h-5 w-5" />
+                                                </div>
+                                                <span className="text-lg font-medium text-foreground line-clamp-1">{post.title}</span>
+                                                <ArrowRight className="h-4 w-4 ml-auto text-muted-foreground shrink-0 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0" />
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </FadeIn>
+
+                        <FadeIn delay={0.4}>
                             <div className="space-y-6">
                                 <h2 className="text-2xl font-bold text-foreground border-b pb-2">Legal & Support</h2>
                                 <ul className="space-y-3">

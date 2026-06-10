@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: post.title,
         description: post.excerpt,
+        keywords: post.tags,
         alternates: {
             canonical: `/blog/${post.slug}`,
         },
@@ -156,31 +157,61 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "BlogPosting",
-                        "headline": post.title,
-                        "image": `https://www.cattlefeednepal.com${post.coverImage}`,
-                        "datePublished": post.date,
-                        "dateModified": post.date,
-                        "author": {
-                            "@type": "Organization",
-                            "name": post.author
-                        },
-                        "publisher": {
-                            "@type": "Organization",
-                            "name": "Nandani Agro Industries Pvt. Ltd.",
-                            "logo": {
-                                "@type": "ImageObject",
-                                "url": "https://www.cattlefeednepal.com/logo/logo.png"
+                    __html: JSON.stringify([
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "BlogPosting",
+                            "headline": post.title,
+                            "image": post.coverImage.startsWith("http")
+                                ? post.coverImage
+                                : `https://www.cattlefeednepal.com${post.coverImage}`,
+                            "datePublished": post.date,
+                            "dateModified": post.date,
+                            "keywords": post.tags.join(", "),
+                            "author": {
+                                "@type": "Organization",
+                                "name": post.author,
+                                "url": "https://www.cattlefeednepal.com"
+                            },
+                            "publisher": {
+                                "@type": "Organization",
+                                "name": "Nandani Agro Industries Pvt. Ltd.",
+                                "logo": {
+                                    "@type": "ImageObject",
+                                    "url": "https://www.cattlefeednepal.com/logo/logo.png"
+                                }
+                            },
+                            "description": post.excerpt,
+                            "mainEntityOfPage": {
+                                "@type": "WebPage",
+                                "@id": `https://www.cattlefeednepal.com/blog/${post.slug}`
                             }
                         },
-                        "description": post.excerpt,
-                        "mainEntityOfPage": {
-                            "@type": "WebPage",
-                            "@id": `https://www.cattlefeednepal.com/blog/${post.slug}`
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://www.cattlefeednepal.com"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://www.cattlefeednepal.com/blog"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": post.title,
+                                    "item": `https://www.cattlefeednepal.com/blog/${post.slug}`
+                                }
+                            ]
                         }
-                    })
+                    ])
                 }}
             />
         </article>

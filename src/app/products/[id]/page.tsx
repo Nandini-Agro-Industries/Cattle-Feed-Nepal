@@ -14,6 +14,44 @@ export function generateStaticParams() {
     }));
 }
 
+const productSeo: Record<string, { title: string; description: string; keywords: string[] }> = {
+    "vanjula-highpro": {
+        title: "Vanjula HighPro | 22% Protein Dairy Cow Feed Nepal | Nandani Agro",
+        description: "Vanjula Pashu Aahar HighPro — Nepal's highest-protein dairy concentrate (22% CP). Scientifically formulated for high-yielding crossbred cattle and early-lactation cows to maximise milk production. Order from Nandani Agro Industries, Rupandehi.",
+        keywords: ["Vanjula HighPro", "high protein cattle feed Nepal", "22 percent protein dairy feed Nepal", "pashu aahar highpro", "best feed for high yielding dairy cow Nepal", "dairy concentrate Nepal", "cattle feed early lactation Nepal"],
+    },
+    "vanjula-bypass": {
+        title: "Vanjula Bypass Protein Feed Nepal | Increase Milk Yield 28% | Nandani Agro",
+        description: "Vanjula Pashu Aahar Bypass uses rumen-undegradable protein (RUP) technology — proven in Nepal field trials to increase daily milk yield by 28%. Ideal for lactating cows, buffaloes, and farms with long inter-calving intervals.",
+        keywords: ["Vanjula Bypass", "bypass protein cattle feed Nepal", "rumen undegradable protein Nepal", "pashu aahar bypass protein", "increase milk yield cow Nepal", "bypass protein technology Nepal"],
+    },
+    "vanjula-pashu-aahar": {
+        title: "Vanjula Pashu Aahar | Balanced Daily Cattle Feed Nepal | 18% Protein",
+        description: "Vanjula Pashu Aahar — balanced 18% CP daily concentrate for dairy cattle in Nepal. Excellent palatability with molasses, suitable for maintenance and mid-to-late lactation feeding. Available nationwide from Nandani Agro Industries.",
+        keywords: ["Vanjula Pashu Aahar", "pashu aahar Nepal", "daily cattle feed Nepal", "गाईको दाना नेपाल", "balanced cattle concentrate Nepal", "गाई दाना 18 percent"],
+    },
+    "vanjula-bhainsi-aahar": {
+        title: "Vanjula Bhainsi Aahar | Buffalo Feed Nepal | Murrah Dairy Buffalo Concentrate",
+        description: "Vanjula Bhainsi Aahar — specialist dairy buffalo concentrate for Nepal's Murrah and crossbred buffaloes. 20% crude protein with bypass technology for maximum milk fat and yield. Formulated specifically for buffalo nutritional requirements.",
+        keywords: ["Vanjula Bhainsi Aahar", "buffalo feed Nepal", "bhainsi ko dana Nepal", "भैंसीको दाना", "Murrah buffalo feed Nepal", "dairy buffalo concentrate Nepal", "bhainsi ko dana 20 protein"],
+    },
+    "siddhartha-cattle": {
+        title: "Siddhartha Cattle Feed | Economical Cow Feed Nepal | Maintenance Formula",
+        description: "Siddhartha Cattle Feed — budget-friendly, nutritious cattle concentrate for general maintenance, dry cows, heifers, and late-lactation herds in Nepal. 16% crude protein. Widely available across Nepal through Nandani Agro dealers.",
+        keywords: ["Siddhartha Cattle Feed", "economical cattle feed Nepal", "maintenance cow feed Nepal", "Siddhartha dana Nepal", "dry cow feed Nepal", "heifer feed Nepal", "low cost cattle concentrate Nepal"],
+    },
+    "siddhartha-goat": {
+        title: "Siddhartha Goat Feed | Bakhra Ko Dana Nepal | Rapid Growth Formula",
+        description: "Siddhartha Goat Feed (Bakhra Ko Dana) — specialized goat concentrate for Nepal. Supports rapid weight gain, strong immunity, and excellent meat quality in meat and dairy goat breeds. 16% CP with vitamins and minerals.",
+        keywords: ["Siddhartha Goat Feed", "bakhra ko dana Nepal", "goat feed Nepal", "बाख्राको दाना नेपाल", "goat concentrate Nepal", "meat goat feed Nepal", "bakhra dana Nepal"],
+    },
+    "bangur-ko-dana": {
+        title: "Bangur Ko Dana | Pig Feed Nepal | High-Energy Weight Gain Formula",
+        description: "Bangur Ko Dana — high-energy pig feed by Nandani Agro Industries. Balanced amino acids, fish meal protein source, and excellent FCR for fast weight gain in grower and finisher pigs in Nepal. No routine antibiotics.",
+        keywords: ["Bangur Ko Dana", "pig feed Nepal", "बंगुरको दाना नेपाल", "pig concentrate Nepal", "pork weight gain feed Nepal", "sungur ko dana Nepal", "high energy pig feed"],
+    },
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
     const { id } = await params;
     const product = products.find((p) => p.id === id);
@@ -24,15 +62,18 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
         };
     }
 
+    const seo = productSeo[product.id];
+
     return {
-        title: product.name,
-        description: product.description,
+        title: seo?.title ?? product.name,
+        description: seo?.description ?? product.description,
+        keywords: seo?.keywords ?? [],
         alternates: {
             canonical: `/products/${product.id}`,
         },
         openGraph: {
-            title: product.name,
-            description: product.description,
+            title: seo?.title ?? product.name,
+            description: seo?.description ?? product.description,
             images: [
                 {
                     url: product.image,
@@ -283,8 +324,6 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                             "offers": {
                                 "@type": "Offer",
                                 "url": `https://www.cattlefeednepal.com/products/${product.id}`,
-                                "priceCurrency": "NPR",
-                                "price": "0",
                                 "availability": "https://schema.org/InStock",
                                 "seller": {
                                     "@type": "Organization",
@@ -315,7 +354,19 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                                     "item": `https://www.cattlefeednepal.com/products/${product.id}`
                                 }
                             ]
-                        }
+                        },
+                        ...(product.faqs && product.faqs.length > 0 ? [{
+                            "@context": "https://schema.org",
+                            "@type": "FAQPage",
+                            "mainEntity": product.faqs.map((faq) => ({
+                                "@type": "Question",
+                                "name": faq.question,
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": faq.answer
+                                }
+                            }))
+                        }] : [])
                     ])
                 }}
             />

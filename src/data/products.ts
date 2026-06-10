@@ -257,4 +257,43 @@ export const products: Product[] = [
             }
         ]
     },
+    {
+        id: "vanjula-bhainsi-aahar",
+        name: "Vanjula Bhainsi Aahar",
+        brand: "Vanjula",
+        image: "/images/vanjula-highpro.png",
+        description: "Scientifically formulated concentrate feed for high-yielding dairy buffaloes (भैंसी). Designed to maximize milk yield, improve fat content, and support reproductive health in Murrah and crossbred buffaloes.",
+        features: [
+            "High protein for peak milk production in buffaloes",
+            "Supports Murrah & crossbred buffalo nutrition",
+            "Improves milk fat (SNF) content",
+            "Balanced calcium and phosphorus for strong bones",
+            "Enriched with bypass protein technology",
+        ],
+        benefits: "Buffaloes contribute over 80% of Nepal's milk supply. Vanjula Bhainsi Aahar is formulated specifically for the nutritional profile of high-yielding dairy buffaloes, ensuring maximum milk output, better fat content, and faster return to cycling after calving.",
+        nutritionalInfo: {
+            crudeProtein: "Min. 20%",
+            crudeFat: "Min. 3.5%",
+            crudeFiber: "Max. 11%",
+            moisture: "Max. 11%",
+        },
+        feedingRate: "400g per litre of milk produced + 1.5 kg per day for body maintenance.",
+        ingredients: "Maize, Soya Doc, Mustard Doc, Rice Bran, Bypass Protein, Mineral Mixture, Calcium, Vitamins.",
+        usageGuide: [
+            "Introduce gradually over 5–7 days by mixing with existing feed.",
+            "Divide daily ration into two equal meals to stabilise rumen pH.",
+            "Ensure unlimited access to clean water — a buffalo producing 10L milk needs 100+ litres daily.",
+            "Store in a cool, dry place away from moisture and direct sunlight.",
+        ],
+        faqs: [
+            {
+                question: "Is this feed different from cattle feed?",
+                answer: "Yes. Buffaloes have a different digestive profile from cows — they are more efficient rumen fermenters but respond strongly to bypass protein supplementation. Vanjula Bhainsi Aahar is formulated for buffalo-specific nutrient requirements.",
+            },
+            {
+                question: "Can I feed this to Murrah buffaloes?",
+                answer: "Absolutely. Vanjula Bhainsi Aahar is specifically designed for high-yielding breeds including Murrah, Surti, and crossbred buffaloes commonly farmed across Nepal's Terai and hill regions.",
+            },
+        ],
+    },
 ];

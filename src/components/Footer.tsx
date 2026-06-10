@@ -42,8 +42,28 @@ export default function Footer() {
                                     </Link>
                                 </li>
                                 <li>
+                                    <Link href="/about" prefetch={false} className="hover:text-primary transition-colors">
+                                        About Us
+                                    </Link>
+                                </li>
+                                <li>
                                     <Link href="/products" prefetch={false} className="hover:text-primary transition-colors">
                                         Our Products
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/blog" prefetch={false} className="hover:text-primary transition-colors">
+                                        Blog
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/tools/feed-calculator" prefetch={false} className="hover:text-primary transition-colors">
+                                        Feed Calculator
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/tools/profit-calculator" prefetch={false} className="hover:text-primary transition-colors">
+                                        Profit Calculator
                                     </Link>
                                 </li>
                                 <li>
@@ -56,7 +76,6 @@ export default function Footer() {
                                         Become a Dealer
                                     </Link>
                                 </li>
-
                             </ul>
                         </div>
                     </FadeIn>

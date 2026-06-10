@@ -1,15 +1,23 @@
 import SectionHeading from "@/components/SectionHeading";
 import FadeIn from "@/components/FadeIn";
-import { Award, Factory, Users, ShieldCheck, Star, Quote, FlaskConical, Truck, CheckCircle2 } from "lucide-react";
+import { Award, Factory, Users, ShieldCheck, Star, Quote, FlaskConical, Truck, CheckCircle2, HelpCircle } from "lucide-react";
 import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Nandani Agro Industries | Cattle Feed Nepal",
-  description: "Learn about Nandani Agro Industries, Nepal's leading manufacturer of premium cattle feed. We produce Vanjula and Siddhartha brands for dairy and livestock farmers.",
+  title: "About Nandani Agro Industries | Pashu Aahar Manufacturer Nepal",
+  description: "Nandani Agro Industries — DFTQC-compliant pashu aahar (पशु आहार) manufacturer in Rupandehi, Nepal. Makers of Vanjula & Siddhartha cattle, goat, and pig feed since 2015.",
+  keywords: [
+    "pashu aahar manufacturer Nepal",
+    "cattle feed company Rupandehi",
+    "पशु आहार उत्पादक नेपाल",
+    "animal feed manufacturer Lumbini",
+    "Nandani Agro Industries Rupandehi",
+    "DFTQC registered feed Nepal",
+  ],
   openGraph: {
-    title: "About Nandani Agro Industries | Cattle Feed Nepal",
-    description: "Learn about Nandani Agro Industries, Nepal's leading manufacturer of premium cattle feed.",
+    title: "About Nandani Agro Industries | Pashu Aahar Manufacturer Nepal",
+    description: "DFTQC-compliant pashu aahar manufacturer in Rupandehi, Nepal. Makers of Vanjula & Siddhartha cattle, goat, and pig feed since 2015.",
     images: ['/images/og/og-about.png'],
   },
   alternates: { canonical: '/about' },
@@ -169,8 +177,8 @@ export default function AboutPage() {
 
       {/* Commitment to Excellence */}
       <section className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <FadeIn className="order-2 md:order-1">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn>
             <div className="space-y-6">
               <h2 className="text-3xl font-bold">Our Quality Process</h2>
               <p className="text-muted-foreground leading-relaxed">
@@ -207,61 +215,136 @@ export default function AboutPage() {
               </div>
             </div>
           </FadeIn>
-
-          <FadeIn className="order-1 md:order-2">
-            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-xl bg-muted/50 border">
-            <Image
-                src="/images/nandani-agro-manufacturing.png"
-                alt="Nandani Agro Industries modern animal feed manufacturing plant at Omsatiya-2, Rupandehi"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-linear-to-tr from-primary/10 to-transparent mix-blend-multiply" />
-            </div>
-          </FadeIn>
         </div>
       </section>
 
-      {/* JSON-LD: Organization with foundingDate, areaServed, knowsAbout */}
+      {/* About FAQ Section */}
+      <section className="container mx-auto px-4 mt-20 mb-4">
+        <SectionHeading
+          title="About Nandani Agro Industries — FAQ"
+          subtitle="Common questions about our company, products, and how to buy."
+        />
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+          {[
+            {
+              q: "Where is Nandani Agro Industries located?",
+              a: "Nandani Agro Industries Pvt. Ltd. is located at Omsatiya-2, Rupandehi, in the Lumbini Province of Nepal. We serve farmers across all seven provinces through our dealer network.",
+            },
+            {
+              q: "How long has Nandani Agro been manufacturing feed?",
+              a: "Nandani Agro Industries was established in 2015 — giving us over 10 years of experience in animal feed manufacturing for Nepal's diverse livestock farming conditions.",
+            },
+            {
+              q: "Are Vanjula and Siddhartha feeds DFTQC registered?",
+              a: "Yes. All Nandani Agro feed products are registered and compliant with Nepal's Department of Food Technology and Quality Control (DFTQC) regulations for animal feed manufacturing and labelling.",
+            },
+            {
+              q: "What animals do you manufacture feed for?",
+              a: "We produce concentrate feeds for dairy cows, dairy buffaloes, goats (bakhra), and pigs (bangur). Our Vanjula range targets peak milk production, while the Siddhartha range covers goat, cattle maintenance, and pig feeding.",
+            },
+            {
+              q: "How can I buy Vanjula or Siddhartha feed?",
+              a: "You can order directly from Nandani Agro Industries by calling +977-9801412266 or emailing cattlefeednepal@gmail.com. We also supply through our dealer network across Nepal.",
+            },
+            {
+              q: "Do you offer dealership opportunities?",
+              a: "Yes. We welcome dealership applications from feed retailers, cooperatives, and agricultural businesses across Nepal. Visit our Become a Dealer page or call us to learn about distributor margins and minimum order quantities.",
+            },
+          ].map((item, i) => (
+            <FadeIn key={i} delay={i * 0.05}>
+              <div className="bg-background border border-border/50 rounded-2xl p-6 shadow-sm h-full hover:shadow-md transition-shadow">
+                <div className="flex gap-4 items-start">
+                  <div className="shrink-0 mt-0.5 h-7 w-7 rounded-full bg-primary/10 flex items-center justify-center">
+                    <HelpCircle className="h-4 w-4 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-foreground mb-2 leading-snug text-sm">{item.q}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{item.a}</p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </section>
+
+      {/* JSON-LD: Organization + FAQPage */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "AboutPage",
-            "@id": "https://www.cattlefeednepal.com/about#webpage",
-            "url": "https://www.cattlefeednepal.com/about",
-            "name": "About Nandani Agro Industries — Nepal Cattle Feed Manufacturer",
-            "description": "DFTQC-compliant manufacturer of Vanjula and Siddhartha cattle, goat, and pig feed. Based in Omsatiya-2, Rupandehi, Nepal.",
-            "inLanguage": "en-US",
-            "dateModified": "2025-05-13",
-            "mainEntity": {
-              "@type": "Organization",
-              "name": "Nandani Agro Industries Pvt. Ltd.",
-              "url": "https://www.cattlefeednepal.com",
-              "foundingDate": "2015",
-              "knowsAbout": [
-                "Cattle Feed Formulation",
-                "Bypass Protein Technology",
-                "Dairy Cow Nutrition",
-                "Nepal Livestock Farming",
-                "Animal Feed Manufacturing"
-              ],
-              "areaServed": {
-                "@type": "Country",
-                "name": "Nepal"
-              },
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Omsatiya-2",
-                "addressLocality": "Rupandehi",
-                "addressRegion": "Lumbini",
-                "postalCode": "32900",
-                "addressCountry": "NP"
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              "@id": "https://www.cattlefeednepal.com/about#webpage",
+              "url": "https://www.cattlefeednepal.com/about",
+              "name": "About Nandani Agro Industries — Nepal Cattle Feed Manufacturer",
+              "description": "DFTQC-compliant manufacturer of Vanjula and Siddhartha cattle, goat, and pig feed. Based in Omsatiya-2, Rupandehi, Nepal.",
+              "inLanguage": "en-US",
+              "dateModified": "2025-05-13",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "Nandani Agro Industries Pvt. Ltd.",
+                "url": "https://www.cattlefeednepal.com",
+                "foundingDate": "2015",
+                "knowsAbout": [
+                  "Cattle Feed Formulation",
+                  "Bypass Protein Technology",
+                  "Dairy Cow Nutrition",
+                  "Nepal Livestock Farming",
+                  "Animal Feed Manufacturing"
+                ],
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Nepal"
+                },
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Omsatiya-2",
+                  "addressLocality": "Rupandehi",
+                  "addressRegion": "Lumbini",
+                  "postalCode": "32900",
+                  "addressCountry": "NP"
+                }
               }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Where is Nandani Agro Industries located?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Nandani Agro Industries Pvt. Ltd. is located at Omsatiya-2, Rupandehi, in the Lumbini Province of Nepal. We serve farmers across all seven provinces through our dealer network." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long has Nandani Agro been manufacturing animal feed?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Nandani Agro Industries was established in 2015 — giving us over 10 years of experience in animal feed manufacturing for Nepal's diverse livestock farming conditions." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Are Vanjula and Siddhartha feeds DFTQC registered?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. All Nandani Agro feed products are registered and compliant with Nepal's Department of Food Technology and Quality Control (DFTQC) regulations for animal feed manufacturing and labelling." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What animals does Nandani Agro manufacture feed for?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "We produce concentrate feeds for dairy cows, dairy buffaloes, goats (bakhra), and pigs (bangur). The Vanjula range targets peak milk production; the Siddhartha range covers goat, cattle maintenance, and pig feeding." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How can I buy Vanjula or Siddhartha feed?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Order directly from Nandani Agro Industries by calling +977-9801412266 or emailing cattlefeednepal@gmail.com. We also supply through our dealer network across Nepal." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do you offer dealership opportunities for feed retailers?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. We welcome dealership applications from feed retailers, cooperatives, and agricultural businesses across Nepal. Visit our Become a Dealer page or call us to learn about distributor margins and minimum order quantities." }
+                }
+              ]
             }
-          })
+          ])
         }}
       />
     </div>

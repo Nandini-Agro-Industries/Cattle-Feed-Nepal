@@ -2,24 +2,23 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion, LazyMotion, domAnimation } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Hero() {
     return (
-        <LazyMotion features={domAnimation}>
-            <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-secondary/30 via-background to-background pt-20 pb-32 md:pt-32 md:pb-48">
+        <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-secondary/30 via-background to-background pt-20 pb-32 md:pt-32 md:pb-48">
                 <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid-pattern.svg')] opacity-[0.03]" />
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                        <motion.div
+                        <m.div
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             className="space-y-8"
                         >
-                            <motion.div
+                            <m.div
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.2, duration: 0.6 }}
@@ -27,7 +26,7 @@ export default function Hero() {
                             >
                                 <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
                                 Nandani Agro Industries - Trusted in Nepal
-                            </motion.div>
+                            </m.div>
                             <h1 className="text-4xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
                                 Best Cattle Feed in Nepal by <span className="text-primary relative inline-block">
                                     Nandani Agro
@@ -49,9 +48,9 @@ export default function Hero() {
                                     <Link href="/contact">Contact Us</Link>
                                 </Button>
                             </div>
-                        </motion.div>
+                        </m.div>
 
-                        <motion.div
+                        <m.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
@@ -61,7 +60,7 @@ export default function Hero() {
 
                             <div className="relative w-full h-full max-w-lg mx-auto flex items-center justify-center">
                                 {/* Left Image - Siddhartha Cattle Feed */}
-                                <motion.div
+                                <m.div
                                     initial={{ x: -50, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ delay: 0.4, duration: 0.6 }}
@@ -75,10 +74,10 @@ export default function Hero() {
                                         priority
                                         sizes="(max-width: 768px) 128px, 192px"
                                     />
-                                </motion.div>
+                                </m.div>
 
                                 {/* Right Image - Vanjula Pashu Aahar */}
-                                <motion.div
+                                <m.div
                                     initial={{ x: 50, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ delay: 0.4, duration: 0.6 }}
@@ -92,10 +91,10 @@ export default function Hero() {
                                         priority
                                         sizes="(max-width: 768px) 128px, 192px"
                                     />
-                                </motion.div>
+                                </m.div>
 
                                 {/* Center Image - Vanjula HighPro */}
-                                <motion.div
+                                <m.div
                                     animate={{ y: [0, -10, 0] }}
                                     transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
                                     className="relative w-48 h-64 md:w-72 md:h-96 z-20 hover:scale-105 transition-transform duration-300"
@@ -108,12 +107,11 @@ export default function Hero() {
                                         priority
                                         sizes="(max-width: 768px) 192px, 288px"
                                     />
-                                </motion.div>
+                                </m.div>
                             </div>
-                        </motion.div>
+                        </m.div>
                     </div>
                 </div>
             </section>
-        </LazyMotion>
     );
 }

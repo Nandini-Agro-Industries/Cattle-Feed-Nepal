@@ -4,7 +4,7 @@ const ProductCard = dynamic(() => import("@/components/ProductCard"));
 const SectionHeading = dynamic(() => import("@/components/SectionHeading"));
 const FadeIn = dynamic(() => import("@/components/FadeIn"));
 const Button = dynamic(() => import("@/components/ui/button").then((mod) => mod.Button));
-import { Award, Leaf, TrendingUp, Truck, BookOpen, ArrowRight, Calendar, HelpCircle } from "lucide-react";
+import { Award, Leaf, TrendingUp, Truck, BookOpen, ArrowRight, Calendar, HelpCircle, Factory } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { blogPosts } from "@/data/blog";
@@ -22,7 +22,12 @@ export const metadata: Metadata = {
     "Animal Nutrition Nepal",
     "Best Cattle Feed Rupandehi",
     "Dairy Cow Feed Nepal",
-    "Livestock Feed Manufacturer Nepal"
+    "Livestock Feed Manufacturer Nepal",
+    "पशु आहार नेपाल",
+    "गाईको दाना",
+    "pashu aahar Nepal",
+    "gai ko dana",
+    "dudh barne dana Nepal",
   ],
   alternates: {
     canonical: '/',
@@ -121,43 +126,67 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Hero />
 
-      {/* About Section */}
-      <section className="py-12 md:py-24 bg-linear-to-b from-background to-muted/30">
-        <div className="container mx-auto px-4">
-          <FadeIn>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-               <div className="relative aspect-4/3 md:aspect-square lg:aspect-4/3 rounded-2xl overflow-hidden shadow-2xl group h-auto">
-                 <Image
-                   src="/images/nandani-agro-manufacturing.png"
-                   alt="Modern state-of-the-art animal feed manufacturing facility"
-                   fill
-                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                   sizes="(max-width: 768px) 100vw, 50vw"
-                 />
-               </div>
-              <div>
-                <div className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-4">
+        <section className="py-16 md:py-32 bg-linear-to-b from-background to-muted/30 relative overflow-hidden">
+        {/* Subtle background decoration */}
+        <div className="absolute top-0 right-0 -mr-32 -mt-32 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 -ml-32 -mb-32 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            
+            {/* Left Column: Text Content */}
+            <div className="lg:col-span-7">
+              <FadeIn>
+                <div className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6 border border-primary/20">
+                  <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
                   About Us
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground leading-tight">
-                  Empowering Farmers with <span className="text-primary">Quality Feed</span>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-foreground leading-tight tracking-tight">
+                  Empowering Farmers with <br className="hidden md:block"/><span className="text-primary bg-clip-text text-transparent bg-linear-to-r from-primary to-green-500">Quality Feed</span>
                 </h2>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed font-light">
                   Established with a vision to revolutionize livestock farming, Nandani Agro Industries Pvt. Ltd. is a leading manufacturer of premium cattle feed in Nepal.
-                  Based in Rupandehi, our state-of-the-art facility utilizes advanced milling technology to produce highly nutritious feed for cattle, goats, and pigs, ensuring maximum yield and animal health.
+                  Based in Rupandehi, our state-of-the-art facility utilizes advanced milling technology to produce highly nutritious feed.
                 </p>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Our flagship brands, <strong>Vanjula</strong> and <strong>Siddhartha</strong>, are trusted by thousands of farmers across the nation. Adhering to strict quality standards and nutritional science, our products are formulated to deliver consistent, measurable results in dairy and meat production.
+                <p className="text-base text-muted-foreground mb-8 leading-relaxed max-w-2xl">
+                  Our flagship brands, <strong className="text-foreground">Vanjula</strong> and <strong className="text-foreground">Siddhartha</strong>, are trusted by thousands of farmers across the nation. Adhering to strict quality standards, our products are formulated to deliver consistent, measurable results in dairy and meat production.
                 </p>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  We believe that a thriving agricultural sector starts with healthy animals. That is why our formulations focus on holistic animal wellness, integrating balanced proteins, bypass fats, and essential trace minerals. From rural family farms to large commercial dairy operations, we provide tailored feeding solutions that improve milk fat content, enhance reproductive health, and boost overall herd immunity.
-                </p>
-                <Button asChild variant="outline" className="rounded-full px-8">
-                  <Link href="/about">Learn More About Us</Link>
+                <Button asChild size="lg" className="rounded-full px-8 h-12 shadow-lg shadow-primary/20 hover:scale-105 transition-all">
+                  <Link href="/about">Discover Our Story <ArrowRight className="ml-2 h-4 w-4" /></Link>
                 </Button>
-              </div>
+              </FadeIn>
             </div>
-          </FadeIn>
+
+            {/* Right Column: Bento Grid Stats & Highlights */}
+            <div className="lg:col-span-5 grid grid-cols-2 gap-4 lg:gap-6 mt-8 lg:mt-0">
+              <FadeIn delay={0.2} className="col-span-2 sm:col-span-1 bg-background rounded-3xl p-6 shadow-sm border border-border/50 hover:border-primary/30 transition-colors group">
+                <div className="h-12 w-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                   <Factory className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-3xl font-extrabold text-foreground mb-1">10+</h3>
+                <p className="text-sm text-muted-foreground font-medium">Years in Operation</p>
+              </FadeIn>
+              
+              <FadeIn delay={0.3} className="col-span-2 sm:col-span-1 bg-primary text-primary-foreground rounded-3xl p-6 shadow-lg shadow-primary/20 hover:-translate-y-1 transition-transform">
+                <div className="h-12 w-12 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
+                   <Award className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-3xl font-extrabold mb-1">100%</h3>
+                <p className="text-sm text-primary-foreground/90 font-medium">DFTQC Compliant</p>
+              </FadeIn>
+
+              <FadeIn delay={0.4} className="col-span-2 bg-gradient-to-br from-muted/50 to-background rounded-3xl p-8 shadow-sm border border-border/50 hover:shadow-md transition-shadow relative overflow-hidden group">
+                <div className="absolute right-0 bottom-0 opacity-5 group-hover:opacity-10 transition-opacity">
+                   <TrendingUp className="h-40 w-40 -mr-10 -mb-10 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3 relative z-10">Holistic Wellness</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed relative z-10">
+                  Our formulations focus on holistic animal wellness, integrating balanced proteins, bypass fats, and essential trace minerals. We provide tailored feeding solutions that improve milk fat content, enhance reproductive health, and boost overall herd immunity.
+                </p>
+              </FadeIn>
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -420,7 +449,7 @@ export default function Home() {
               "name": "Cattle Feed Manufacturers in Nepal | Nandani Agro Industries",
               "description": "Nepal's leading manufacturer of premium cattle feed, goat feed, and pig feed. Vanjula and Siddhartha brands trusted by thousands of farmers.",
               "datePublished": "2025-01-01",
-              "dateModified": "2025-05-13",
+              "dateModified": "2026-06-05",
               "inLanguage": "en-US",
               "isPartOf": {
                 "@type": "WebSite",

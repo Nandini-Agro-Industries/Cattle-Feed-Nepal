@@ -859,5 +859,287 @@ export const blogPosts: BlogPost[] = [
 
             <p class="text-xs text-muted-foreground italic mt-8">Sources: Nandani Agro Industries product specifications (cattlefeednepal.com); Nepalese Journal of Agricultural Sciences (Osti et al., 2013); Oregon State University Extension — Feeding the Dairy Cow During Lactation; Merck Veterinary Manual — Nutritional Requirements of Dairy Cattle (2025); National Cattle Research Program, Rampur, Chitwan; NARC Lamjung District Field Trial (2021).</p>
         `
+    },
+    {
+        id: "3",
+        slug: "buffalo-feed-nepal-increase-milk-production",
+        title: "Buffalo Feed Nepal (भैंसी को दाना): How to Increase Milk Production in Dairy Buffaloes",
+        excerpt: "Buffaloes produce over 80% of Nepal's milk yet most farmers feed them the same ration as cattle. Learn the nutritional differences, the best concentrate feed for Murrah and crossbred buffaloes, and how to increase bhainsi milk yield by up to 30%.",
+        coverImage: "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=1200&h=630&fit=crop&q=80",
+        date: "2025-03-01",
+        author: "Nandani Agro Industries Nutrition Team",
+        authorTitle: "Animal Feed Formulation Specialists",
+        authorBio: "The Nandani Agro Industries Nutrition Team comprises qualified veterinary nutritionists and agricultural scientists based in Rupandehi, Nepal. Their formulations are developed in alignment with NARC guidelines and field-validated across Nepal's diverse livestock regions.",
+        tags: ["Buffalo Feed", "Bhainsi Ko Dana", "Milk Production", "Nepal", "Dairy Farming"],
+        content: `
+            <p>Nepal's dairy industry runs on buffaloes — yet buffalo nutrition is one of the most overlooked areas in Nepalese livestock farming.</p>
+
+            <p>Buffaloes account for over <strong>80% of Nepal's total milk production</strong> and are the backbone of dairy farming across the Terai, mid-hills, and inner valleys. Yet most farmers feed their bhainsi the same generic concentrate designed for cattle, or worse, rely entirely on straw and whatever forage is available. The result is buffaloes producing a fraction of their genetic potential.</p>
+
+            <blockquote class="border-l-4 border-primary pl-4 my-6 bg-primary/5 p-4 rounded-r-lg">
+                <p class="font-bold mb-2 text-foreground">Key Takeaways</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Buffaloes produce 80%+ of Nepal's milk — but are routinely underfed relative to their nutritional needs</li>
+                    <li>Murrah buffaloes can yield 1,500–2,500 litres per lactation with proper nutrition — most Nepali bhainsi produce under 800 L</li>
+                    <li>Bypass protein supplementation increases buffalo milk yield by 20–30% in South Asian field trials</li>
+                    <li>Buffaloes are more efficient rumen fermenters than cattle but still respond strongly to high-quality concentrate supplementation</li>
+                </ul>
+            </blockquote>
+
+            <hr class="my-8" />
+
+            <h2 class="text-3xl font-bold mt-10 mb-4 text-foreground">Why Buffalo Nutrition Is Different From Cattle Nutrition</h2>
+
+            <p>Buffaloes and cattle are both ruminants but have meaningful physiological differences that affect feeding strategy.</p>
+
+            <p><strong>Buffaloes are more efficient rumen fermenters.</strong> They digest fibrous roughage better than cattle, which is why they thrive in straw-heavy environments. However, this efficiency cuts both ways — buffaloes can maintain body weight on lower-quality diets, but they also extract less benefit from poor-quality concentrates.</p>
+
+            <p><strong>Buffalo milk has higher fat content.</strong> Nepal's bhainsi produce milk averaging 7–8% fat compared to 3.5–4% for crossbred cattle. Synthesising this fat requires more energy and protein at the metabolic level — meaning a buffalo producing 8 litres daily with 8% fat is actually making a greater nutrient demand than a cow producing 10 litres at 4% fat.</p>
+
+            <p><strong>Buffaloes have longer inter-calving intervals.</strong> Nepal's average buffalo inter-calving interval exceeds 18–20 months — even longer than cattle. Poor nutrition during early lactation is a major driver of delayed return to cycling in buffaloes.</p>
+
+            <figure class="my-8 bg-white p-4 rounded-2xl border shadow-sm">
+                <svg viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparison of buffalo vs cattle milk characteristics in Nepal" class="w-full h-auto max-w-2xl mx-auto">
+                    <rect width="560" height="220" fill="transparent"/>
+                    <text x="280" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a">Buffalo vs. Cattle Milk — Nepal Average Comparison</text>
+                    <rect x="60" y="45" width="200" height="130" rx="10" fill="#2980b9" fill-opacity="0.1" stroke="#2980b9" stroke-width="1.5"/>
+                    <text x="160" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2980b9">Dairy Cattle</text>
+                    <text x="160" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">Fat: 3.5–4%</text>
+                    <text x="160" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">Yield: 8–10 L/day</text>
+                    <text x="160" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">Lactation: ~1,800 L</text>
+                    <text x="160" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">Share of Nepal milk: ~20%</text>
+                    <rect x="300" y="45" width="200" height="130" rx="10" fill="#27ae60" fill-opacity="0.1" stroke="#27ae60" stroke-width="1.5"/>
+                    <text x="400" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#27ae60">Dairy Buffalo</text>
+                    <text x="400" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">Fat: 7–8%</text>
+                    <text x="400" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">Yield: 5–8 L/day</text>
+                    <text x="400" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">Lactation: ~800–1,500 L</text>
+                    <text x="400" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">Share of Nepal milk: ~80%</text>
+                    <text x="280" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#888">Source: Nepal Dairy Development Board; NARC Livestock Research</text>
+                </svg>
+            </figure>
+
+            <hr class="my-8" />
+
+            <h2 class="text-3xl font-bold mt-10 mb-4 text-foreground">What to Feed Dairy Buffaloes in Nepal — The Key Nutrients</h2>
+
+            <p>A high-yielding dairy buffalo needs the following from her concentrate feed:</p>
+
+            <ul class="list-disc pl-5 space-y-3 mb-6">
+                <li><strong>Crude protein: 18–20%</strong> — The energy cost of synthesising high-fat milk is significant. Protein supports both milk protein synthesis and energy metabolism.</li>
+                <li><strong>Bypass protein (RUP):</strong> Research across South Asia consistently shows 20–30% increases in buffalo milk yield when bypass protein is added. It bypasses rumen fermentation and delivers amino acids directly to the small intestine.</li>
+                <li><strong>Calcium: 0.7–0.8% of diet DM</strong> — Critical for milk synthesis and prevention of milk fever (hypocalcaemia) around calving.</li>
+                <li><strong>Phosphorus: 0.4–0.5% of diet DM</strong> — Often deficient in Nepal's hill soils. Supplementation improves reproductive performance significantly.</li>
+                <li><strong>Vitamin A & E:</strong> Essential for reproductive health and immunity, especially during dry season when green forage is scarce.</li>
+            </ul>
+
+            <hr class="my-8" />
+
+            <h2 class="text-3xl font-bold mt-10 mb-4 text-foreground">How Much Feed Does a Dairy Buffalo Need Per Day?</h2>
+
+            <p>Use this simple feeding guide for a lactating Murrah or crossbred buffalo:</p>
+
+            <figure class="my-8 bg-white p-4 rounded-2xl border shadow-sm overflow-x-auto">
+                <svg viewBox="0 0 580 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Daily feed guide for dairy buffaloes by milk yield" class="w-full h-auto max-w-2xl mx-auto">
+                    <rect width="580" height="200" fill="transparent"/>
+                    <text x="290" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a">Daily Concentrate Requirement — Dairy Buffalo (400g/L rule)</text>
+                    <rect x="40" y="40" width="500" height="35" rx="4" fill="#f0f9f4" stroke="#27ae60" stroke-width="1"/>
+                    <text x="50" y="62" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">5 L/day buffalo:</text>
+                    <text x="210" y="62" font-family="Arial, sans-serif" font-size="11" fill="#333">2.0 kg (5×400g) + 1.5 kg maintenance = <tspan font-weight="bold">3.5 kg concentrate/day</tspan></text>
+                    <rect x="40" y="85" width="500" height="35" rx="4" fill="#fff8f0" stroke="#e67e22" stroke-width="1"/>
+                    <text x="50" y="107" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e67e22">8 L/day buffalo:</text>
+                    <text x="210" y="107" font-family="Arial, sans-serif" font-size="11" fill="#333">3.2 kg (8×400g) + 1.5 kg maintenance = <tspan font-weight="bold">4.7 kg concentrate/day</tspan></text>
+                    <rect x="40" y="130" width="500" height="35" rx="4" fill="#fef0f0" stroke="#c0392b" stroke-width="1"/>
+                    <text x="50" y="152" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#c0392b">12 L/day buffalo:</text>
+                    <text x="210" y="152" font-family="Arial, sans-serif" font-size="11" fill="#333">4.8 kg (12×400g) + 1.5 kg maintenance = <tspan font-weight="bold">6.3 kg concentrate/day</tspan></text>
+                    <text x="290" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#888">Plus: 15–20 kg green fodder + free-choice dry roughage + 100+ litres clean water daily</text>
+                </svg>
+            </figure>
+
+            <p>Always divide the daily concentrate into <strong>two equal meals</strong> — morning and evening. Never feed more than 3 kg in a single meal, as this risks rumen acidosis.</p>
+
+            <hr class="my-8" />
+
+            <h2 class="text-3xl font-bold mt-10 mb-4 text-foreground">The Best Concentrate Feed for Buffaloes in Nepal</h2>
+
+            <p><strong>Vanjula Bhainsi Aahar</strong> by Nandani Agro Industries is formulated specifically for Nepal's dairy buffaloes — Murrah, Surti, and local crossbreds. At <strong>20% crude protein</strong> with integrated bypass protein technology, it addresses the core nutritional gap that limits milk production in most Nepali bhainsi.</p>
+
+            <p>Key formulation advantages:</p>
+            <ul class="list-disc pl-5 space-y-2 mb-6">
+                <li>20% crude protein — matched to the higher fat-synthesis demands of buffalo milk</li>
+                <li>Bypass protein technology for maximum amino acid absorption</li>
+                <li>Balanced calcium and phosphorus to prevent milk fever and support reproductive health</li>
+                <li>Vitamins A and E to maintain immunity through dry season</li>
+            </ul>
+
+            <p><a href="/products/vanjula-bhainsi-aahar" class="text-primary font-semibold hover:underline">View Vanjula Bhainsi Aahar product details and feeding guide &rarr;</a></p>
+
+            <hr class="my-8" />
+
+            <h2 class="text-3xl font-bold mt-10 mb-4 text-foreground">Frequently Asked Questions — Buffalo Feed Nepal</h2>
+
+            <div class="space-y-6 my-6">
+                <div class="border border-border rounded-xl p-5 bg-muted/30">
+                    <h3 class="text-lg font-bold text-foreground mb-2">What is the best feed for Murrah buffalo in Nepal?</h3>
+                    <p>A scientifically formulated concentrate with 18–20% crude protein and bypass protein technology delivers the strongest results for Murrah and crossbred buffaloes. <strong>Vanjula Bhainsi Aahar</strong> by Nandani Agro Industries is specifically developed for Nepal's dairy buffaloes, providing the protein, energy, and mineral balance needed to support peak lactation and reproductive health.</p>
+                </div>
+                <div class="border border-border rounded-xl p-5 bg-muted/30">
+                    <h3 class="text-lg font-bold text-foreground mb-2">Can I feed cattle concentrate to buffaloes?</h3>
+                    <p>You can, but it is not optimal. Buffaloes producing high-fat milk have higher protein and energy requirements than the same volume of cattle milk. A concentrate formulated for buffalo-specific nutritional profiles will deliver better milk yield, fat content, and reproductive performance than a standard cattle feed.</p>
+                </div>
+                <div class="border border-border rounded-xl p-5 bg-muted/30">
+                    <h3 class="text-lg font-bold text-foreground mb-2">How much water does a dairy buffalo need per day?</h3>
+                    <p>A lactating buffalo needs <strong>80–120 litres of clean drinking water per day</strong> depending on milk yield, ambient temperature, and dry matter intake. Water is the single most underestimated factor limiting buffalo milk production in Nepal — ensure troughs are clean and refilled at least twice daily.</p>
+                </div>
+                <div class="border border-border rounded-xl p-5 bg-muted/30">
+                    <h3 class="text-lg font-bold text-foreground mb-2">Why does my buffalo produce less milk in summer?</h3>
+                    <p>Buffaloes are more heat-sensitive than cattle and experience significant heat stress above 27°C — common across Nepal's Terai from March to June. Heat stress reduces dry matter intake by 10–15%, directly cutting milk yield. Provide shade, increase water access, and maintain concentrate feeding to partially offset the loss.</p>
+                </div>
+            </div>
+
+            <div class="bg-primary/10 border-l-4 border-primary p-6 my-8 rounded-r-lg">
+                <p class="font-bold text-lg mb-2 text-foreground">Order Vanjula Bhainsi Aahar for your buffaloes</p>
+                <p>Contact <strong>Nandani Agro Industries</strong> at <strong>+977-9801412266</strong> or <strong>cattlefeednepal&#64;gmail&#46;com</strong> for bulk orders and dealer enquiries. Located at Omsatiya-2, Rupandehi, Nepal. <a href="/contact" class="text-primary hover:underline font-semibold">Get in touch &rarr;</a></p>
+            </div>
+
+            <p class="text-xs text-muted-foreground italic mt-8">Sources: Nepal Dairy Development Board; NARC Livestock Research Programme; Sustainable Livestock Production in Nepal, MDPI Agriculture (2022); Milk Production and Value Chain in Rural Nepal, Herald Open Access (2021); Merck Veterinary Manual — Nutritional Requirements of Dairy Buffaloes.</p>
+        `
+    },
+    {
+        id: "4",
+        slug: "bypass-protein-cattle-feed-nepal",
+        title: "Bypass Protein for Dairy Cows in Nepal: What It Is and Why It Increases Milk by 28%",
+        excerpt: "Bypass protein (rumen-undegradable protein) is the single most effective feed technology for increasing milk yield in Nepal's dairy cattle. A Nepalese field trial showed a 28% increase in daily milk production. Here's how it works and which farms benefit most.",
+        coverImage: "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=1200&h=630&fit=crop&q=80",
+        date: "2025-04-01",
+        author: "Nandani Agro Industries Nutrition Team",
+        authorTitle: "Animal Feed Formulation Specialists",
+        authorBio: "The Nandani Agro Industries Nutrition Team comprises qualified veterinary nutritionists and agricultural scientists based in Rupandehi, Nepal. Their formulations are developed in alignment with NARC guidelines and field-validated across Nepal's diverse livestock regions.",
+        tags: ["Bypass Protein", "Dairy Nutrition", "Milk Production", "Nepal", "Cattle Feed"],
+        content: `
+            <p>If there is one feed technology that consistently delivers the biggest measurable return for Nepal's dairy farmers, it is bypass protein — also called rumen-undegradable protein (RUP).</p>
+
+            <p>In a controlled field trial published by the <em>Nepalese Journal of Agricultural Sciences</em>, bypass protein supplementation increased daily milk production from <strong>8.13 kg to 10.45 kg per cow per day</strong> — a statistically significant <strong>28% increase</strong> (p&lt;0.001, Osti et al., 2013). The trial was conducted under real Nepalese farmer management conditions — not a research station. This is what your cows can do.</p>
+
+            <blockquote class="border-l-4 border-primary pl-4 my-6 bg-primary/5 p-4 rounded-r-lg">
+                <p class="font-bold mb-2 text-foreground">Key Takeaways</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Bypass protein (RUP) bypasses rumen fermentation and is absorbed directly in the small intestine — making protein utilisation up to 3× more efficient</li>
+                    <li>Nepal field trial: daily milk yield increased from 8.1 kg to 10.5 kg per cow — a 28% jump (Nepalese Journal of Agricultural Sciences, 2013)</li>
+                    <li>Benefits extend beyond milk yield: faster return to cycling, better body condition, higher milk fat content</li>
+                    <li>Vanjula Pashu Aahar Bypass by Nandani Agro Industries uses heat-treated rumen-protected protein technology formulated for Nepal's crossbred dairy cattle</li>
+                </ul>
+            </blockquote>
+
+            <hr class="my-8" />
+
+            <h2 class="text-3xl font-bold mt-10 mb-4 text-foreground">What Is Bypass Protein?</h2>
+
+            <p>To understand bypass protein, you need to understand what normally happens to protein in a cow's digestive system.</p>
+
+            <p>A cow's stomach has four compartments. The first and largest — the rumen — is a fermentation chamber where billions of microbes break down feed. These microbes are essential for digesting fibre, but they also degrade a large proportion of the protein your cow eats before she can absorb it.</p>
+
+            <p>In a typical dairy cow diet, <strong>60–70% of dietary protein is degraded in the rumen</strong>. Some of this degraded protein is captured by rumen microbes (useful), but a significant fraction is converted to ammonia and excreted as urea — wasted. The protein that survives the rumen intact and reaches the small intestine for direct absorption is called <strong>rumen-undegradable protein (RUP)</strong>, or bypass protein.</p>
+
+            <figure class="my-8 bg-white p-4 rounded-2xl border shadow-sm">
+                <svg viewBox="0 0 560 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing normal protein vs bypass protein pathway in cow digestion" class="w-full h-auto max-w-2xl mx-auto">
+                    <rect width="560" height="240" fill="transparent"/>
+                    <text x="280" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a">How Bypass Protein Reaches the Mammary Gland</text>
+                    <rect x="30" y="40" width="220" height="160" rx="10" fill="#fef9f9" stroke="#c0392b" stroke-width="1.5"/>
+                    <text x="140" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#c0392b">Normal Protein</text>
+                    <text x="140" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#555">Rumen: ~65% degraded</text>
+                    <text x="140" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#555">→ ammonia → urea → wasted</text>
+                    <text x="140" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#555">Small intestine: ~35% absorbed</text>
+                    <text x="140" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#c0392b">Result: LOW milk yield</text>
+                    <rect x="310" y="40" width="220" height="160" rx="10" fill="#f0faf5" stroke="#27ae60" stroke-width="1.5"/>
+                    <text x="420" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#27ae60">Bypass Protein (Vanjula)</text>
+                    <text x="420" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#555">Rumen: passes through intact</text>
+                    <text x="420" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#555">→ heat-treated, rumen-protected</text>
+                    <text x="420" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#555">Small intestine: ~85% absorbed</text>
+                    <text x="420" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">Result: +28% milk yield (Nepal trial)</text>
+                </svg>
+                <figcaption class="text-center text-xs text-muted-foreground mt-2">Source: Osti et al., Nepalese Journal of Agricultural Sciences, 2013</figcaption>
+            </figure>
+
+            <hr class="my-8" />
+
+            <h2 class="text-3xl font-bold mt-10 mb-4 text-foreground">Benefits Beyond Milk Yield</h2>
+
+            <p>Bypass protein's benefits are not limited to how much milk your cow produces. Research consistently shows improvements across four areas:</p>
+
+            <ul class="list-disc pl-5 space-y-3 mb-6">
+                <li><strong>Higher milk fat and protein percentage.</strong> More amino acids reaching the mammary gland means better milk quality — higher SNF and fat content, which improves your price at the dairy cooperative.</li>
+                <li><strong>Better body condition through lactation.</strong> Early-lactation cows draw on body reserves to cover the energy gap. Bypass protein reduces the depth of this negative energy balance, meaning cows lose less body condition and recover faster.</li>
+                <li><strong>Faster return to cycling.</strong> Cows in better body condition at 45–60 days post-calving resume oestrus sooner. This directly shortens your inter-calving interval — one of the biggest hidden costs in Nepalese dairy farming.</li>
+                <li><strong>Reduced metabolic disorders.</strong> Farmers using Vanjula Bypass report fewer cases of acidosis and ketosis — both linked to rapid dietary protein fermentation in an overloaded rumen.</li>
+            </ul>
+
+            <hr class="my-8" />
+
+            <h2 class="text-3xl font-bold mt-10 mb-4 text-foreground">Which Farms Benefit Most From Bypass Protein?</h2>
+
+            <p>Bypass protein delivers the greatest return on investment in specific farm situations:</p>
+
+            <ul class="list-disc pl-5 space-y-3 mb-6">
+                <li><strong>Straw-heavy diets.</strong> If your roughage base is primarily rice or wheat straw (low digestibility, low protein), rumen microbes are already working hard to ferment fibre. Bypass protein reduces competition between fibre fermentation and protein degradation in the rumen.</li>
+                <li><strong>Early lactation (first 16 weeks post-calving).</strong> This is when the energy and protein demand is highest and the cow is in negative energy balance. Bypass protein delivers amino acids directly without taxing the rumen.</li>
+                <li><strong>High-yielding crossbred cattle (8+ litres/day).</strong> The more milk a cow produces, the more protein she needs at the mammary gland. Bypass protein scales proportionally with yield.</li>
+                <li><strong>Farms with long inter-calving intervals.</strong> If your cows regularly take 16+ months between calvings, poor early-lactation nutrition (including protein) is likely a contributor.</li>
+            </ul>
+
+            <hr class="my-8" />
+
+            <h2 class="text-3xl font-bold mt-10 mb-4 text-foreground">Vanjula Pashu Aahar Bypass — Nepal's Bypass Protein Concentrate</h2>
+
+            <p><strong>Vanjula Pashu Aahar Bypass</strong> by Nandani Agro Industries is formulated with heat-treated, rumen-protected protein technology validated in Nepalese field conditions. At <strong>20% crude protein</strong> with a significant proportion as bypass (RUP), it delivers amino acids where your cow needs them most — the small intestine and mammary gland.</p>
+
+            <div class="overflow-x-auto my-6">
+            <table class="min-w-full border-collapse border border-border">
+            <thead><tr class="bg-muted/50">
+            <th class="border border-border p-2 text-left">Nutrient</th>
+            <th class="border border-border p-2 text-left">Specification</th>
+            </tr></thead>
+            <tbody>
+            <tr><td class="border border-border p-2 font-bold">Crude Protein</td><td class="border border-border p-2">Min. 20%</td></tr>
+            <tr><td class="border border-border p-2 font-bold">Crude Fat</td><td class="border border-border p-2">Min. 4%</td></tr>
+            <tr><td class="border border-border p-2 font-bold">Crude Fiber</td><td class="border border-border p-2">Max. 12%</td></tr>
+            <tr><td class="border border-border p-2 font-bold">Moisture</td><td class="border border-border p-2">Max. 11%</td></tr>
+            </tbody>
+            </table>
+            </div>
+
+            <p><strong>Feeding rate:</strong> 1.5–2 kg/day maintenance + 400g per litre of milk produced. For maximum effect during early lactation, combine with Vanjula HighPro in a 60/40 ratio.</p>
+
+            <p><a href="/products/vanjula-bypass" class="text-primary font-semibold hover:underline">View Vanjula Bypass full product details and feeding guide &rarr;</a></p>
+
+            <hr class="my-8" />
+
+            <h2 class="text-3xl font-bold mt-10 mb-4 text-foreground">Frequently Asked Questions — Bypass Protein Nepal</h2>
+
+            <div class="space-y-6 my-6">
+                <div class="border border-border rounded-xl p-5 bg-muted/30">
+                    <h3 class="text-lg font-bold text-foreground mb-2">Is bypass protein safe for dairy cows?</h3>
+                    <p>Yes. Bypass protein is produced by heat-treating or chemically treating protein sources to make them resistant to rumen degradation. The process does not add any harmful substances — it simply protects natural protein from rumen fermentation so more reaches the small intestine. It has been used safely in commercial dairy farming worldwide for over 30 years.</p>
+                </div>
+                <div class="border border-border rounded-xl p-5 bg-muted/30">
+                    <h3 class="text-lg font-bold text-foreground mb-2">Can I feed bypass protein to buffaloes?</h3>
+                    <p>Yes — and with excellent results. South Asian research on Murrah buffaloes shows milk yield increases of 20–25% with bypass protein supplementation, similar to cattle. Vanjula Bhainsi Aahar incorporates bypass protein technology formulated for Nepal's dairy buffaloes.</p>
+                </div>
+                <div class="border border-border rounded-xl p-5 bg-muted/30">
+                    <h3 class="text-lg font-bold text-foreground mb-2">How quickly will I see results after switching to bypass protein feed?</h3>
+                    <p>Most farmers report measurable increases in daily milk yield within <strong>2–3 weeks</strong> of consistent feeding. The transition period (1–2 weeks of gradual introduction) is normal and necessary. Body condition and reproductive improvements typically appear over 4–8 weeks of sustained use.</p>
+                </div>
+                <div class="border border-border rounded-xl p-5 bg-muted/30">
+                    <h3 class="text-lg font-bold text-foreground mb-2">Where can I buy bypass protein cattle feed in Nepal?</h3>
+                    <p>Vanjula Pashu Aahar Bypass is manufactured by Nandani Agro Industries at Omsatiya-2, Rupandehi and distributed through their authorised dealer network across Nepal. Contact <strong>+977-9801412266</strong> or <strong>cattlefeednepal&#64;gmail&#46;com</strong> for the nearest dealer or to place a bulk order.</p>
+                </div>
+            </div>
+
+            <div class="bg-primary/10 border-l-4 border-primary p-6 my-8 rounded-r-lg">
+                <p class="font-bold text-lg mb-2 text-foreground">Try bypass protein on your farm</p>
+                <p>Order <strong>Vanjula Pashu Aahar Bypass</strong> directly from Nandani Agro Industries at <strong>+977-9801412266</strong>. Available in bulk for commercial dairy farms and through dealers across Nepal. <a href="/products/vanjula-bypass" class="text-primary hover:underline font-semibold">View product details &rarr;</a></p>
+            </div>
+
+            <p class="text-xs text-muted-foreground italic mt-8">Sources: Osti et al., Nepalese Journal of Agricultural Sciences (2013); National Cattle Research Program, Rampur, Chitwan; ADM Animal Nutrition — Rumen-Undegradable Protein Reference (2023); Merck Veterinary Manual — Protein Nutrition of Dairy Cattle; NRC Nutrient Requirements of Dairy Cattle (2001).</p>
+        `
     }
 ];
