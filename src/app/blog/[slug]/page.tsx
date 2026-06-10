@@ -106,7 +106,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 {/* Hero Section */}
                 <header className="mb-12 text-center">
                     <div className="flex flex-wrap justify-center gap-2 mb-6">
-                        {post.tags.map(tag => (
+                        {post.tags?.map((tag: string) => (
                             <span key={tag} className="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                                 {tag}
                             </span>
@@ -157,7 +157,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <div className="flex items-center gap-2">
                         <Tag className="h-5 w-5 text-muted-foreground" />
                         <div className="flex gap-2">
-                            {post.tags.map(tag => (
+                            {post.tags?.map((tag: string) => (
                                 <span key={tag} className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-md">
                                     {tag}
                                 </span>
